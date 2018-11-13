@@ -6,16 +6,17 @@
         //data.sort(function (a, b) { return a.IDPs - b.IDPs; });
 
         var vW = $(window).width();
-
+        alert(vW);
         var svgWidth = 350;
-
-
-        //if (vW < 576)
-        //    svgWidth = 250;
-        //else if (vW < 768)
-        //    svgWidth = 300;
-
-
+        if (vW < 576)
+            svgWidth = 350;
+        else if (vW < 750)
+            svgWidth = 350;
+        else if (vW < 1000)
+            svgWidth = 230;
+        else if (vW < 1200)
+        svgWidth = 310;
+        
 
         // Add svg main container
         var svg = d3.select("#chart").append("svg").attr("width", svgWidth).attr("height", 300);
