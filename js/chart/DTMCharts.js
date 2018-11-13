@@ -7,8 +7,6 @@
 
         var vW = $(window).width();
 
-        alert(vW);
-
         var svgWidth = 350;
 
 
