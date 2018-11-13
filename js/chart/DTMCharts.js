@@ -6,16 +6,13 @@
         //data.sort(function (a, b) { return a.IDPs - b.IDPs; });
 
         var vW = $(window).width();
-        alert(vW);
+        
         var svgWidth = 350;
-        if (vW < 576)
-            svgWidth = 350;
-        else if (vW < 750)
-            svgWidth = 350;
-        else if (vW < 1000)
-            svgWidth = 230;
-        else if (vW < 1200)
-        svgWidth = 310;
+
+        if (vW < 1000 &&  vW > 980)
+            svgWidth = 300;
+        else if (vW < 980)
+            svgWidth = 600;
         
 
         // Add svg main container
