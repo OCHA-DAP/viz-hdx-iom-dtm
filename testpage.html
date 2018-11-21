@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.7.0/d3.js"></script>
+    <script>
+        var anObject = { Country: "US", Population: 20000, "Area": 5.3, Developing: true };
+        console.log("---------- d3.keys, d3.values, d3.entries");
+        console.log(d3.keys(anObject));
+        console.log(d3.values(anObject));
+        console.log(d3.entries(anObject));
+        
+        console.log("------------------------------------------");
+        var d3Array = d3.entries(anObject)
+        for ({ key, value } of d3Array) {
+            console.log(key + "  " + value);
+        }
+
+        console.log("------------------------------------------");
+        console.log(Object.entries(anObject));
+        var jsArray = Object.entries(anObject);
+        for ([key, value] of jsArray) {
+            console.log(key + "   " + value);
+        }
+
+        var myMap = d3.map();
+        myMap.set("Country1", 1);
+        myMap.set("Country1", 10);
+        myMap.set("Country3", 100);
+        myMap.set("Country4", 1000);
+        myMap.set("Country5", 10000);
+        myMap.set("Country6", 100000);
+
+        console.log(myMap.keys());
+        console.log(myMap.values());
+        console.log(myMap.entries());
+
+        myMap.each(function (key, value) {
+            console.log(value + " " + key);
+        });
+        
+        
+        
+
+
+    </script>
+</body>
+</html>

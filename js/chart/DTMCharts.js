@@ -5,32 +5,34 @@
         // Sort the array
         //data.sort(function (a, b) { return a.IDPs - b.IDPs; });
 
-        var vW = $(window).width();
-        
-        var svgWidth = 350;
+        var vW = window.innerWidth;
 
-        if (vW < 1000 &&  vW > 980)
+        var svgWidth = 350;
+        if (vW < 1000 && vW > 980)
             svgWidth = 300;
         else if (vW < 980)
             svgWidth = 600;
-        
+
+        var svgHeight = 420;
 
         // Add svg main container
-        var svg = d3.select("#chart").append("svg").attr("width", svgWidth).attr("height", 300);
+        var svg = d3.select("#chart").append("svg").attr("width", svgWidth).attr("height", svgHeight);
 
         // Margins
         var margin = { left: 80, top: 10, right: 30, bottom: 30 };
         var width = svg.attr("width") - margin.left - margin.right;
-        var height = svg.attr("height") - margin.top - margin.bottom;
+        var height = svgHeight - margin.top - margin.bottom;
 
         // Create a container to group chart, and axis
         var chart = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+        // tooltips
+        var div = d3.select("#chart").append('div').attr("class", "tooltip1").style("opacity", 0);
 
         //// Create scale
         // x scale which will be number of IDPs
         var x = d3.scaleLinear()
             .domain([0, d3.max(data, d => d.idpsnumber)])
-            .range([0, width]);
+            .range([1, width]);
 
         //  x scale whic hwill be countries so scale band
         var y = d3.scaleBand()
@@ -56,6 +58,57 @@
             .attr("x", 0)
             .attr("y", d => y(d.country)) // countries
             .attr("width", d => x(d.idpsnumber)) // IDPs
-            .attr("height", y.bandwidth());
+            .attr("height", y.bandwidth())
+            .on("mouseover", mouseover)
+            .on("mouseout", mouseout);
+
+        // Add label on the bars
+        chart.append("g")
+            .attr("fill", "black")
+            //.attr("text-anchor", "end")
+            .style("font", "12px sans-serif")
+            .selectAll("text")
+            .data(data)
+            .enter().append("text")
+            .attr("x", function (d, i) {
+                if (x(d.idpsnumber) < 60) {
+                    return x(d.idpsnumber) + 4;
+                }
+                else {
+                    return x(d.idpsnumber) - 40;
+                }
+
+            })
+            .attr("y", d => y(d.country) + y.bandwidth() / 2)
+            .attr("dy", "0.35em")
+            .text(d => Utility.abbreviateNumber(d.idpsnumber))
+            .on("mouseover", mouseover)
+            .on("mouseout", mouseout);
+
+        function mouseover(d) {
+            div.transition()
+                .duration(50)
+                .style("opacity", .9);
+            div.html(`<div class="card bg-warning" style="width: 12rem;">
+                    
+                    <div class=text-center><b>` + d.country + `</b></div>
+       <ul class="list-unstyled ml-2"><li><div>Households : ` + d.idpsnumber + `</div></li>
+                    <li><div>IDPs : ` + d.idpsnumber + `</div>
+                    <ul><li>Male: 29%</li>
+                                    <li>Children: 55%</li>
+                    <li>Female: 38%</li>
+                    </ul></li>
+                </div>`)
+                .style("left", x(d.idpsnumber) + "px")
+                .style("top", (y(d.country) - 95) + "px")
+
+        }
+
+        function mouseout(d) {
+            
+            div.transition()
+                .duration(200)
+                .style("opacity", 0);
+        }
     }
 }

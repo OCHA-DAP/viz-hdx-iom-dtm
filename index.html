@@ -5,19 +5,21 @@
     <title>IOM DTM Viz</title>
 
     <!--Styles Css-->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <!--<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="css/dtmstyle.css">
     <!--Style Ends-->
     <!--JS External files-->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>-->
+    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.7.0/d3.js"></script>
+    <script src="http://d3js.org/topojson.v2.min.js"></script>
+    
     <!--JS  End-->
     <!--JS internal files-->
     <script src="js/utility.js"></script>
-    
+
 
     <!--JS internal fiels end-->
 </head>
@@ -44,7 +46,7 @@
                 <div class="card">
                     <div class="card-body text-center">
                         <span id="titleCountry" class="text-muted card-title"><b>Countries</b></span>
-                        <h3 id="numOfCountries" class="card-text spinner"></h3>
+                        <h3 id="numOfCountries" class="card-text spinner"></h>
                     </div>
                 </div>
             </div>
@@ -70,26 +72,31 @@
         <div class="row mt-4">
             <div class="col-sm-12 col-md-12 col-lg-8 col-xl-8">
                 <div class="card">
-                    <span class="col-12 text-muted card-title"><b>IDP individuals</b></span>
+                    <span class="col-12 text-muted card-title"><b>IDPs by Admin1 </b></span>
                     <div class="col-12 card-text">
-                        <img style="width:100%; height:300px;" />
+                        <input id="needsButton" type="checkbox">Needs
+                        <div id="map"></div>
                     </div>
                 </div>
             </div>
             <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4" >
                 <div class="card">
                     <span class="col-12 text-muted card-title"><b>IDPs by Country name</b></span>
-                    <div id="chart" style="width:100%; height:300px;" ></div>
+                    <div id="chart"></div>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- <div class="tooltip" style="opacity: 9; left: 1101px; top: 300px;">This is a big test</div> -->
+    
     <!--Container-->
     <!--Model Code-->
     <script src="js/chart/DTMCharts.js"></script>
+    <script src="js/map/DTMmaps.js"></script>
     <script src="js/models.js"></script>
     <script>
-        Models.getDataDTM();
+        Models.getDataDTM();        
     </script>
 
 </body>

@@ -5,7 +5,7 @@
             var totalIdps = 0;
             var totalHH = 0;
             var countriesOld = [];
-            var newArraySeries = [];
+            var idpsHHByCountryArray = [];
             var countries = {};
 
             $.each(data, function (key, val) {
@@ -19,8 +19,10 @@
                 countries[val["#country+name"]] += val["#population+idps+ind"]
             })
 
+            
+            //console.log(countries);
             for (var country in countries) {
-                newArraySeries.push({ country: country, idpsnumber: countries[country] })
+                idpsHHByCountryArray.push({ country: country, idpsnumber: countries[country] })
             }
 
             $('#totalNumHH').text(Utility.abbreviateNumber(totalHH)).removeClass("spinner");
@@ -30,11 +32,37 @@
 
             $('#numOfCountries').text(numOfCountries.size).removeClass("spinner")
 
-            newArraySeries.sort(Utility.dynamicSort("idpsnumber"));
+            idpsHHByCountryArray.sort(Utility.dynamicSort("idpsnumber"));
 
-            console.log(newArraySeries);
+            objIndex = idpsHHByCountryArray.findIndex((obj => obj.country == 'Central African Republic'));            
+            idpsHHByCountryArray[objIndex].country = 'CAR';
 
-            Charts.drawIDPsByCountryChart(newArraySeries);
+            objIndex = data.findIndex((obj => obj["#adm1+code"] == 'MDG52'));
+            data[objIndex]["#adm1+code"] = "MG52";
+
+            objIndex = data.findIndex((obj => obj["#adm1+code"] == 'MLI01'));
+            data[objIndex]["#adm1+code"] = "ML01";
+            objIndex = data.findIndex((obj => obj["#adm1+code"] == 'MLI02'));
+            data[objIndex]["#adm1+code"] = "ML02";
+            objIndex = data.findIndex((obj => obj["#adm1+code"] == 'MLI03'));
+            data[objIndex]["#adm1+code"] = "ML03";
+            objIndex = data.findIndex((obj => obj["#adm1+code"] == 'MLI04'));
+            data[objIndex]["#adm1+code"] = "ML04";
+            objIndex = data.findIndex((obj => obj["#adm1+code"] == 'MLI05'));
+            data[objIndex]["#adm1+code"] = "ML05";
+            objIndex = data.findIndex((obj => obj["#adm1+code"] == 'MLI06'));
+            data[objIndex]["#adm1+code"] = "ML06";
+            objIndex = data.findIndex((obj => obj["#adm1+code"] == 'MLI07'));
+            data[objIndex]["#adm1+code"] = "ML07";
+            objIndex = data.findIndex((obj => obj["#adm1+code"] == 'MLI08'));
+            data[objIndex]["#adm1+code"] = "ML08";
+            objIndex = data.findIndex((obj => obj["#adm1+code"] == 'MLI09'));
+            data[objIndex]["#adm1+code"] = "ML09";
+
+            //console.log(idpsHHByCountryArray);
+            //console.log(data);
+            Charts.drawIDPsByCountryChart(idpsHHByCountryArray);
+            Maps.drawMapDTM(data);
 
         }).fail(function () {
             console.log("error");
