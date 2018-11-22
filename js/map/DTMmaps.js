@@ -50,6 +50,10 @@
             .domain([1, 1001, 10001, 50001, 100001, 500001, 1000001])
             .range(["#fff", "#ede5f2", "#c9b2d9", "#a57fc0", "#814ca7", "#5d198e", "#4b0082"]);
 
+        var needsColor = d3.scaleThreshold()
+            .domain([1, 1001, 10001, 50001, 100001, 500001, 1000001])
+            .range(["#fff", "#ebb9b9", "#e5a2a2", "#de8b8b", "#d15c5c", "#cb4545", "#be1717"]);
+
         var countryLayer = svg.append("g").attr("class", "countryLayer");
         var needsLayer = svg.append("g").attr("class", "bubble").attr("visibility", "hidden");
 
@@ -76,6 +80,8 @@
 
                 values.forEach(function (data, index, array) {
                     var dataFeatures = topojson.feature(data, data.objects.adm1_boundaries).features;
+
+                    //console.log(dataFeatures);
 
                     for (item of dataFeatures) {
                         //console.log(item);
@@ -163,10 +169,11 @@
                         .attr("d", path)
                         .style("fill", function (d, i) {
                             let idpsNumber = 0;
-                            idpsNumber = dataFeatures[i].properties.idpsNumber;
+                            idpsNumber = d.properties.idpsNumber;
                             if (idpsNumber === undefined || idpsNumber === 0)
                                 return 'white';
                             return color(idpsNumber);
+                            
                         })
                         .on("mouseover", function (d, i) {
                             tooltip.transition()
@@ -204,20 +211,53 @@
                     //    .attr("cx", function (d) { return d[0]; })
                     //    .attr("cy", function (d) { return d[1]; });
 
+                    //needsLayer.append("g")
+                    //    //.attr("class", "bubble")
+                    //    .selectAll("circle")
+                    //    .data(dataFeatures)
+                    //    .enter().append("circle")
+                    //    .attr("transform", function (d) { return "translate(" + path.centroid(d) + ")"; })
+                    //    .attr("r", function (d, i) {
+                    //        let needs = 0;
+                    //        needs = dataFeatures[i].properties.needsTemp;
+                    //        if (needs === undefined)
+                    //            needs = 0;
+                    //        return radius(needs);
+                    //        //console.log(dataFeatures[i].properties.CountryNameTemp + " - " + dataFeatures[i].properties.Admin1NameTemp + " - " + dataFeatures[i].properties.needsTemp);
+                    //        //return 1;
+                    //    });
+
+                    //svg.append("path")
+                    //    .datum(topojson.merge(us, us.objects.states.geometries.filter(d => d.id > 25)))
+                    //    .attr("fill", "#ddd")
+                    //    .attr("d", d3.geoPath());
+
+                    //needsLayer.append("path")
+                    //    //.selectAll("path")
+                    //    //.datum(topojson.merge(us, us.objects.states.geometries.filter(d => d.id > 25)))
+                    //    .datum(function (d, i) {
+                    //        //console.log(dataFeatures[i].properties);
+                    //        dataFeatures[i].properties.filter(d => d.CountryNameTemp !== 'Mali' || d.CountryNameTemp !== 'mali')
+                    //    })
+                    //    //.enter().append("path")
+                    //    .attr("d", d3.geoPath())
+                    //    .style("fill", "red")
+
                     needsLayer.append("g")
-                        //.attr("class", "bubble")
-                        .selectAll("circle")
+                        .selectAll("path")
                         .data(dataFeatures)
-                        .enter().append("circle")
-                        .attr("transform", function (d) { return "translate(" + path.centroid(d) + ")"; })
-                        .attr("r", function (d, i) {
+                        .enter().append("path")
+                        .filter(function (d) {
                             let needs = 0;
-                            needs = dataFeatures[i].properties.needsTemp;
-                            if (needs === undefined)
-                                needs = 0;
-                            return radius(needs);
-                            //console.log(dataFeatures[i].properties.CountryNameTemp + " - " + dataFeatures[i].properties.Admin1NameTemp + " - " + dataFeatures[i].properties.needsTemp);
-                            //return 1;
+                            needs = d.properties.needsTemp;
+                            return !(needs === undefined || needs === 0);
+                        })
+                        .attr("d", path)
+                        .style("fill", function (d) {
+                            let needs = 0;
+                            needs = d.properties.needsTemp;
+                            if (!(needs === undefined || needs === 0))
+                                return needsColor(needs);
                         });
                         
                 });
@@ -228,6 +268,7 @@
                 // Map Legend
                 var legendText = ["> 500K", "> 100K", "> 50K", "> 10K", " > 1K", "< 1K"];
                 var legend = svg.append("g")
+                    .attr("transform", "translate(0,0)")
                     .attr("width", 140)
                     .attr("height", 200)
                     .selectAll("g")
@@ -243,6 +284,37 @@
 
                 legend.append("text")
                     .data(legendText)
+                    .attr("x", 24)
+                    .attr("y", 9)
+                    .attr("dy", ".35em")
+                    .text(function (d) { return d; });
+
+
+                // Needs color domain
+                var needsColorDomain = needsColor.domain().slice();
+                needsColorDomain.splice(-2, 1);
+
+                // Map Legend
+                var legendText2 = ["> 500K", "> 100K", "> 50K", "> 10K", " > 1K", "< 1K"];
+                var legend2 = svg.append("g")
+                    .attr("class", "bubble")
+                    .attr("visibility", "hidden")
+                    .attr("transform", "translate(0,150)")
+                    .attr("width", 140)
+                    .attr("height", 200)
+                    .selectAll("g")
+                    .data(needsColorDomain.reverse())
+                    .enter()
+                    .append("g")
+                    .attr("transform", function (d, i) { return "translate(0," + i * 20 + ")"; });
+
+                legend2.append("rect")
+                    .attr("width", 18)
+                    .attr("height", 18)
+                    .style("fill", needsColor);
+
+                legend2.append("text")
+                    .data(legendText2)
                     .attr("x", 24)
                     .attr("y", 9)
                     .attr("dy", ".35em")

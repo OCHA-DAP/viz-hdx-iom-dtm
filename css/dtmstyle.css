@@ -95,10 +95,10 @@ div.tooltip {
     opacity: 0.7;
 }
 
-.bubble {
-    fill-opacity: .5;
+/*.bubble {
+    fill-opacity: 1;
     stroke: #fff;
     stroke-width: .5px;
     fill: red;
-}
+}*/
 
