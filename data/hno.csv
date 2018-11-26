@@ -1,0 +1,64 @@
+#country+name,#country+code,#adm1+name,#adm1+code,#inneed
+Burundi,BDI,Bubanza,BDI001,155175
+Burundi,BDI,Bujumbura Mairie,BDI017,203300
+Burundi,BDI,Bujumbura Rural,BDI002,274344
+Burundi,BDI,Bururi,BDI003,73314
+Burundi,BDI,Cankuzo,BDI004,135976
+Burundi,BDI,Cibitoke,BDI005,356572
+Burundi,BDI,Gitega,BDI006,253741
+Burundi,BDI,Karuzi,BDI007,123495
+Burundi,BDI,Kayanza,BDI008,222170
+Burundi,BDI,Kirundo,BDI009,284153
+Burundi,BDI,Makamba,BDI010,283014
+Burundi,BDI,Muramvya,BDI011,68511
+Burundi,BDI,Muyinga,BDI012,387924
+Burundi,BDI,Mwaro,BDI013,77975
+Burundi,BDI,Ngozi,BDI014,292661
+Burundi,BDI,Rumonge,BDI018,178522
+Burundi,BDI,Rutana,BDI015,102754
+Burundi,BDI,Ruyigi,BDI016,128952
+Mali,ML,Bamako,ML09,450982
+Mali,ML,Gao,ML07,535173
+Mali,ML,Kayes,ML01,576025
+Mali,ML,Kidal,ML08,29257
+Mali,ML,Koulikouro,ML02,777940
+Mali,ML,Mopti,ML05,932913
+Mali,ML,Segou,ML04,582177
+Mali,ML,Sikasso,ML03,562419
+Mali,ML,Tombouctou,ML06,640404
+CAR,CF,Bamingui Bangoran,CF51,27644
+CAR,CF,Bangui,CF71,222567
+CAR,CF,Basse Kotto,CF61,72422
+CAR,CF,Haut-Mbomou,CF63,43746
+CAR,CF,Haute Kotto,CF52,30948
+CAR,CF,Kemo,CF41,27405
+CAR,CF,Lobaye,CF12,87251
+CAR,CF,Mambere-Kadei,CF21,149518
+CAR,CF,Mbomou,CF62,100138
+CAR,CF,Nana-Gribizi,CF42,130098
+CAR,CF,Nana-Mambere,CF22,130626
+CAR,CF,Ombella MPoko,CF11,165908
+CAR,CF,Ouaka,CF43,269813
+CAR,CF,Ouham,CF32,342729
+CAR,CF,Ouham Pende,CF31,342499
+CAR,CF,Sangha-Mbaere,CF23,17627
+CAR,CF,Vakaga,CF53,46784
+Nigeria,NGA,Adamawa,NG002,1865960
+Nigeria,NGA,Bauchi,NG005,1310171
+Nigeria,NGA,Borno,NG008,4272225
+Nigeria,NGA,Gombe,NG016,457565
+Nigeria,NGA,Taraba,NG035,755220
+Nigeria,NGA,Yobe,NG036,1576813
+Libya,LY,East,LY01,392700
+Libya,LY,South,LY03,137800
+Libya,LY,West,LY02,616800
+Cameroon,CMR,Adamaoua,CMR001,498146
+Cameroon,CMR,Centre,CMR002,17256
+Cameroon,CMR,Est,CMR003,376609
+Cameroon,CMR,Extreme-Nord,CMR004,1578999
+Cameroon,CMR,Littoral,CMR005,18154
+Cameroon,CMR,Nord,CMR006,390205
+Cameroon,CMR,Nord ouest,CMR007,0
+Cameroon,CMR,Ouest,CMR008,161
+Cameroon,CMR,Sud,CMR009,109
+Cameroon,CMR,Sud-Ouest,CMR010,35983

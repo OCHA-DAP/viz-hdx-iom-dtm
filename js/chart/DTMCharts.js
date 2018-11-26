@@ -4,6 +4,7 @@
 
         // Sort the array
         //data.sort(function (a, b) { return a.IDPs - b.IDPs; });
+        var centered;
 
         var vW = window.innerWidth;
 
@@ -11,7 +12,7 @@
         if (vW < 1000 && vW > 980)
             svgWidth = 300;
         else if (vW < 980)
-            svgWidth = 600;
+            svgWidth = 500;
 
         var svgHeight = 420;
 
@@ -39,16 +40,19 @@
             .domain(data.map(d => d.country))
             .range([height, 0])
             .padding(0.1);
+            
 
         //// Create Axis
         // X axis which will be number of Idps and on x scale and set it on height
         chart.append("g")
             .call(d3.axisBottom(x).tickValues(x.ticks(3).concat(x.domain())).tickFormat(d3.formatPrefix(".1", 1e8)))
-            .attr("transform", "translate(0," + height + ")");
+            .attr("transform", "translate(0," + height + ")")
+            .attr("class", "axisColor");
 
         // Y axis which will be number of IDPs and on y scale
         chart.append("g")
-            .call(d3.axisLeft(y).tickSizeOuter(0));
+            .call(d3.axisLeft(y).tickSizeOuter(0))
+            .attr("class", "axisColor");
 
         // Draw chart
         var bars = chart.selectAll("rec")
@@ -60,7 +64,8 @@
             .attr("width", d => x(d.idpsnumber)) // IDPs
             .attr("height", y.bandwidth())
             .on("mouseover", mouseover)
-            .on("mouseout", mouseout);
+            .on("mouseout", mouseout)
+            .on("click", click);
 
         // Add label on the bars
         chart.append("g")
@@ -83,7 +88,8 @@
             .attr("dy", "0.35em")
             .text(d => Utility.abbreviateNumber(d.idpsnumber))
             .on("mouseover", mouseover)
-            .on("mouseout", mouseout);
+            .on("mouseout", mouseout)
+            .on("click", click);
 
         function mouseover(d) {
             div.transition()
@@ -105,10 +111,38 @@
         }
 
         function mouseout(d) {
-            
+            console.log(div);
             div.transition()
                 .duration(200)
                 .style("opacity", 0);
+        }
+
+        function click(d) {
+            var baseLayer = d3.select(".test1");
+            var x, y, k;
+
+            if (d && centered !== d) {
+                var centroid = [382.6978911335704, 58.38692777016687];
+
+                x = centroid[0];
+                y = centroid[1];
+                k = 4;
+                centered = d;
+            } else {
+                x = 300;
+                y = 210;
+                k = 1;
+                centered = null;
+            }
+
+            //baseLayer.selectAll("path")
+            //    .classed("active", centered && function (d) { return d === centered; });
+
+            console.log(baseLayer)
+            baseLayer.transition()
+                .duration(750)
+                .attr("transform", "translate(" + 600 / 2 + "," + 420 / 2 + ")scale(" + k + ")translate(" + -x + "," + -y + ")")
+                .style("stroke-width", 1.5 / k + "px");
         }
     }
 }

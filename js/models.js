@@ -60,8 +60,8 @@
             data[objIndex]["#adm1+code"] = "ML09";
 
             //console.log(idpsHHByCountryArray);
-            //console.log(data);
             Charts.drawIDPsByCountryChart(idpsHHByCountryArray);
+            //LeafLetMaps.drawMapDTM(data);
             Maps.drawMapDTM(data);
 
         }).fail(function () {
