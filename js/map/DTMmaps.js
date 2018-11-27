@@ -1,96 +1,73 @@
 ﻿var Maps = {
 
+    //Frist draw Map of Africa and then pull and draw country layers.
+    //Add Legends and Zoom
     drawMapDTM: function drawMapDTM(idpsData) {
 
+        // Set width of the map on the basis of view port size TODO
         var vW = window.innerWidth;
 
         var svgWidth = 600;
         if (vW < 1000 && vW > 980)
-            svgWidth = 550;
-        
-            
+            svgWidth = 500;
 
-        //console.log(svgWidth);
-
+        // Height of the map
         var svgHeight = 600;
+
+        // This would be used in the zoom
         var centered;
+
+        // Map container
         var svg = d3.select("#map").append("svg").attr("width", svgWidth).attr("height", svgHeight);
-        //console.log(svg);
+
+        // No margins yet but could be useful, later.
         var margin = { top: 0, right: 0, bottom: 0, left: 0 };
-        var width = svg.attr("width") - margin.left - margin.right;
+        var width = svgWidth - margin.left - margin.right;
         var height = svgHeight - margin.top - margin.bottom;
 
+        // Set projection.
         var projection = d3.geoMercator()
             .center([0, 0])
             .scale(420)
-            .translate([width/4, height / 2]);
+            .translate([width / 4, height / 2]);
 
+        // Set path on projection
         var path = d3.geoPath().projection(projection);
 
-        // Base map layer group
+        // This layer('g') would be used to all layers of the map.
+        // The class is to select this element in DTMCharts.js
         var baseLayer = svg.append("g").attr("class", "test1");
 
-        // Africa Countries Layer as BaseLayer
-        var url = "data/geo/topojson/africa_admin0.json";
-
-        // Draw Base Layer
-        d3.json(url).then(function (data) {
-            var boundaries = topojson.feature(data, data.objects.africa_admin0);
+        
+        // Draw Africa layer
+        d3.json("data/geo/topojson/africa_admin0.json").then(function (data) {
 
             baseLayer.append("g")
                 .attr("class", "baseLayer")
                 .selectAll("path")
-                .data(boundaries.features)
+                .data(topojson.feature(data, data.objects.africa_admin0).features)
                 .enter().append("path")
                 .attr("d", path)
-                .append("text")
-                .attr("class", "countryname")
-                .style("text-anchor", "middle")
-                .attr("dx", 0)
-                .attr("dy", 0)
-                .text(function (d) {
-                    return d.properties.iso3;
-                })
-
-            //baseLayer.selectAll("g")
-            //    .data(boundaries.features)
-            //    .enter().append("text")
-            //    //.attr("class", function (d) { return "subunit-label " + d.iso_a3; })
-            //    .attr("class", "countryname")
-            //    .attr("transform", function (d) {
-            //        let coord = path.centroid(d);
-            //        coord[0] = coord[0] - 20;
-            //        console.log(coord);
-            //        return "translate(" + coord + ")";
-            //    })
-            //    .attr("dy", ".5em")
-            //    .text(function (d) { return d.properties.name; });
         });
 
-        var tooltip = d3.select("body").append("div")
-            .attr("class", "tooltip")
-            .style("opacity", 0);
 
-        //var color = d3.scaleThreshold()
-        //    .domain([1, 1001, 10001, 50001, 100001, 500001, 1000001])
-        //    .range(["#fff", "#ede5f2", "#c9b2d9", "#a57fc0", "#814ca7", "#5d198e", "#4b0082"]);
-
+        // IDPs color on the map
         var color = d3.scaleThreshold()
             .domain([1, 1001, 10001, 50001, 100001, 500001, 1000001])
             .range(["#fff", "#afdbe1", "#9fd4db", "#7ec6cf", "#5fb8c3", "#4c939c", "#396e75"]);
 
-        //var needsColor = d3.scaleThreshold()
-        //    .domain([1, 1001, 10001, 50001, 100001, 500001, 1000001])
-        //    .range(["#fff", "#ebb9b9", "#e5a2a2", "#de8b8b", "#d15c5c", "#cb4545", "#be1717"]);
-
+        // Needs data color on the map
         var needsColor = d3.scaleThreshold()
             .domain([1, 1001, 10001, 50001, 100001, 500001, 1000001])
             .range(["#fff", "#dddd81", "#d7d76c", "#d2d256", "#cccc42", "#c7c72d", "#b3b328"]);
 
-        var countryLayer = svg.append("g").attr("class", "countryLayer");
-        var needsLayer = svg.append("g").attr("class", "bubble").attr("visibility", "hidden");
+        // The radius for needs data circles.
+        var radius = d3.scaleSqrt()
+            .domain([0, 100000])
+            .range([0, 2]);
 
-        var files = [
+        // Admin1 boundaries URLs
+        var admin1JsonFiles = [
             "data/geo/topojson/bdi_adm1.json",
             "data/geo/topojson/caf_adm1.json",
             "data/geo/topojson/cmr_adm1.json",
@@ -100,26 +77,30 @@
             "data/geo/topojson/nga_adm1.json"
         ];
 
+        //Putll and push all topojson into 'promises' array.
         var promises = [];
-
-        files.forEach(function (url) {
+        admin1JsonFiles.forEach(function (url) {
             promises.push(d3.json(url))
         });
 
-        Promise.all(promises).then(function (values) {
-            //console.log(values);
+        // All async call to topojson
+        Promise.all(promises).then(function (jsonData) {
 
+            // Need data promise.
             Promise.resolve(d3.csv("data/hno.csv")).then(function (needsData) {
 
-                values.forEach(function (data, index, array) {
+                // Loop on each Admin1-Boundaries data and add 'number of IDPs', countyr and admin1 name in the json
+                jsonData.forEach(function (data) {
                     var dataFeatures = topojson.feature(data, data.objects.adm1_boundaries).features;
 
-                    //console.log(dataFeatures);
-
                     for (item of dataFeatures) {
-                        //console.log(item);
-                        var j = 0;
+
+                        // IDPsData is DTM data passed from model.js where this function is called.
+                        // IDPsData has number of IDPs, households, countyr and admin1 names
                         for (const idp of idpsData) {
+
+                            // Since we have differetn json files and all files could have differnt column name
+                            // so we have to check it with hasownproperty. If so then add a property 'idpsNumber'
                             if (item.properties.hasOwnProperty("admin1Pcod")) {
                                 if (item.properties.admin1Pcod === idp['#adm1+code']) {
                                     let number = idp["#population+idps+ind"];
@@ -143,6 +124,7 @@
                                 }
                             }
 
+                            // Add 'CountryNameTemp' and 'Admin1NameTemp' properties for consistency
                             if (item.properties.hasOwnProperty("admin0Name")) {
                                 item.properties.CountryNameTemp = item.properties.admin0Name;
                             }
@@ -168,6 +150,7 @@
                             }
                         }
 
+                        // Loop on needs adata and add number of people in need property
                         for (const needs of needsData) {
                             if (item.properties.hasOwnProperty("admin1Pcod")) {
                                 if (item.properties.admin1Pcod === needs['#adm1+code']) {
@@ -186,21 +169,9 @@
                                 }
                             }
                         }
+                    }                    
 
-                        //if (item.properties.hasOwnProperty("admin0Name")) {
-                        //    //console.log('has property');
-                        //    if (item.properties.admin0Name === "Mali") {
-                        //        //console.log(idp["#population+idps+ind"]);
-                        //        console.log(item.properties);
-                        //        //console.log(j);
-                        //    }
-                        //}
-                    }
-
-                    var radius = d3.scaleSqrt()
-                        .domain([0, 100000])
-                        .range([0, 2]);
-
+                    // Draw number of IDPs on the map
                     baseLayer.append("g")
                         .selectAll("path")
                         .data(dataFeatures)
@@ -210,21 +181,15 @@
                         .style("fill", function (d, i) {
                             let idpsNumber = 0;
                             idpsNumber = d.properties.idpsNumber;
-                            if (idpsNumber === undefined || idpsNumber === 0) {
-                                //console.log(d.properties.CountryNameTemp + " - " + idpsNumber);
 
+                            // That means there are no idps in this amdin1
+                            if (idpsNumber === undefined || idpsNumber === 0) {
                                 return 'white';
                             }
                             else {
-                                //if (d.properties.CountryNameTemp === "Burundi") {
-                                //    console.log(d.properties.CountryNameTemp + " - " + idpsNumber);
-                                //    console.log(color(idpsNumber));
-                                //}
+                                // return color scale
                                 return color(idpsNumber);
                             }
-
-
-
                         })
                         .on("click", function (d) {
                             var x, y, k;
@@ -243,51 +208,13 @@
                                 centered = null;
                             }
 
-                            //baseLayer.selectAll("path")
-                            //    .classed("active", centered && function (d) { return d === centered; });
-
                             baseLayer.transition()
                                 .duration(750)
                                 .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")scale(" + k + ")translate(" + -x + "," + -y + ")")
                                 .style("stroke-width", 1.5 / k + "px");
-                        });
-                    //    .on("mouseover", function (d, i) {
-                    //        tooltip.transition()
-                    //            .duration(200)
-                    //            .style("opacity", .9);
-                    //        //tooltip.html(dataFeatures[i].properties.idpsNumber)
-                    //        tooltip.html(`<div class="card bg-warning" style="width: 12rem;">
+                        });                    
 
-                    //             <div class=text-center><h4>` + dataFeatures[i].properties.CountryNameTemp + `</h4><h5>` + dataFeatures[i].properties.Admin1NameTemp + `</h5></div>
-                    //<ul class="list-unstyled ml-2"><li><div>Households : ` + dataFeatures[i].properties.idpsNumber + `</div></li>
-                    //             <li><div>IDPs : ` + dataFeatures[i].properties.idpsNumber + `</div>
-                    //             </li>
-                    //         </div>`)
-
-                    //            .style("left", (d3.event.pageX) + "px")
-                    //            .style("top", (d3.event.pageY - 28) + "px");
-                    //    })
-                    //    .on("mouseout", function (d) {
-                    //        tooltip.transition()
-                    //            .duration(500)
-                    //            .style("opacity", 0);
-                    //    })
-
-
-                    var centroids = dataFeatures.map(function (feature) {
-                        return path.centroid(feature);
-                    });
-
-                    //needsLayer.selectAll(".centroid").data(centroids)
-                    //    .enter().append("circle")
-                    //    .attr("class", "centroid")
-                    //    .attr("fill", "red")
-                    //    .attr("stroke", "black")
-                    //    .attr("stroke-width", 0.1)
-                    //    .attr("r", 8)
-                    //    .attr("cx", function (d) { return d[0]; })
-                    //    .attr("cy", function (d) { return d[1]; });
-
+                    // Draw circles on the map
                     baseLayer.append("g")
                         .selectAll("circle")
                         .data(dataFeatures)
@@ -309,8 +236,6 @@
                                 needs = needs / 2;
 
                             return radius(needs);
-                            //console.log(dataFeatures[i].properties.CountryNameTemp + " - " + dataFeatures[i].properties.Admin1NameTemp + " - " + dataFeatures[i].properties.needsTemp);
-                            //return 1;
                         })
                         .filter(function (d) {
                             let needs = 0;
@@ -323,51 +248,78 @@
                             if (!(needs === undefined || needs === 0))
                                 return needsColor(needs);
                         });
-
-                    //svg.append("path")
-                    //    .datum(topojson.merge(us, us.objects.states.geometries.filter(d => d.id > 25)))
-                    //    .attr("fill", "#ddd")
-                    //    .attr("d", d3.geoPath());
-
-                    //needsLayer.append("path")
-                    //    //.selectAll("path")
-                    //    //.datum(topojson.merge(us, us.objects.states.geometries.filter(d => d.id > 25)))
-                    //    .datum(function (d, i) {
-                    //        //console.log(dataFeatures[i].properties);
-                    //        dataFeatures[i].properties.filter(d => d.CountryNameTemp !== 'Mali' || d.CountryNameTemp !== 'mali')
-                    //    })
-                    //    //.enter().append("path")
-                    //    .attr("d", d3.geoPath())
-                    //    .style("fill", "red")
-
-                    //needsLayer.append("g")
-                    //    .selectAll("path")
-                    //    .data(dataFeatures)
-                    //    .enter().append("path")
-                    //    .filter(function (d) {
-                    //        let needs = 0;
-                    //        needs = d.properties.needsTemp;
-                    //        return !(needs === undefined || needs === 0);
-                    //    })
-                    //    .attr("d", path)
-                    //    .style("fill", function (d) {
-                    //        let needs = 0;
-                    //        needs = d.properties.needsTemp;
-                    //        if (!(needs === undefined || needs === 0))
-                    //            return needsColor(needs);
-                    //    });
-
                 });
 
+                
+
+                // Needs color domain
+                var needsColorDomain = needsColor.domain().slice();
+                needsColorDomain.splice(-2, 1);
+
+                // Map Legend Needs, in the begining it would be hidden
+                //var needsLegendBreaks = ["> 500K", "> 100K", "> 50K", "> 10K", " > 1K", "< 1K"];
+                //var legendNeeds = svgLegendNeeds.append("g")
+                //    .attr("class", "bubble")
+                //    .attr("visibility", "hidden")
+                //    .attr("transform", "translate(0,0)")
+                //    .attr("width", 140)
+                //    .attr("height", 200)
+                //    .selectAll("g")
+                //    .data(needsColorDomain.reverse())
+                //    .enter()
+                //    .append("g")
+                //    .attr("transform", function (d, i) { return "translate(0," + i * 20 + ")"; });
+
+                //// Needs colors
+                //legendNeeds.append("rect")
+                //    .attr("width", 18)
+                //    .attr("height", 18)
+                //    .style("fill", needsColor);
+
+                //// Needs text
+                //legendNeeds.append("text")
+                //    .data(needsLegendBreaks)
+                //    .attr("fill", "#fff")
+                //    .attr("x", 24)
+                //    .attr("y", 9)
+                //    .attr("dy", ".35em")
+                //    .text(function (d) { return d; });
+                //var radius = d3.scale.sqrt()
+                //    .domain([0, 1e6])
+                //    .range([0, 15]);
+
+                // Draw Legends of IDPS and Needs
+                var svgLegendNeeds = d3.select("#legendNeeds").append("svg").attr("width", "100px").attr("height", "100px");
+               
+                var legend = svgLegendNeeds.append("g")
+                    .attr("class", "legend")
+                    .attr("transform", "translate(50, 50)")
+                    .selectAll("g")
+                    .data([10000, 20000, 100000])
+                    .enter().append("g");
+
+                legend.append("circle")
+                    .attr("cy", function (d) { return -radius(d); })
+                    .attr("r", function (d, i) {
+                        console.log((radius(i)*1000) + 5);
+                        return radius(i) * 1000 + 5;
+                    });
+
+                legend.append("text")
+                    .attr("y", function (d) { return -2 * radius(d); })
+                    .attr("dy", "1.3em")
+                    .text(d3.format(".1s"));
+
+                // IDPs color domain
                 var colorDomain = color.domain().slice();
                 colorDomain.splice(-2, 1);
 
-                var svgLegend = d3.select("#legend").append("svg").attr("width", "100px").attr("height", "300px");
+                // IDPs legend container
+                var svgLegendIDPs = d3.select("#legendIDPs").append("svg").attr("width", "100px").attr("height", "150px");
 
 
-                // Map Legend
-                var legendText = ["> 500K", "> 100K", "> 50K", "> 10K", " > 1K", "< 1K"];
-                var legend = svgLegend.append("g")
+                var idpsLegendBreaks = ["> 500K", "> 100K", "> 50K", "> 10K", " > 1K", "< 1K"];
+                var legendIDPs = svgLegendIDPs.append("g")
                     .attr("transform", "translate(0,0)")
                     .attr("width", 140)
                     .attr("height", 200)
@@ -377,45 +329,15 @@
                     .append("g")
                     .attr("transform", function (d, i) { return "translate(0," + i * 20 + ")"; });
 
-                legend.append("rect")
+                // Draw rectangles
+                legendIDPs.append("rect")
                     .attr("width", 18)
                     .attr("height", 18)
                     .style("fill", color);
 
-                legend.append("text")
-                    .data(legendText)
-                    .attr("fill", "#fff")
-                    .attr("x", 24)
-                    .attr("y", 9)
-                    .attr("dy", ".35em")
-                    .text(function (d) { return d; });
-
-
-                // Needs color domain
-                var needsColorDomain = needsColor.domain().slice();
-                needsColorDomain.splice(-2, 1);
-
-                // Map Legend
-                var legendText2 = ["> 500K", "> 100K", "> 50K", "> 10K", " > 1K", "< 1K"];
-                var legend2 = svgLegend.append("g")
-                    .attr("class", "bubble")
-                    .attr("visibility", "hidden")
-                    .attr("transform", "translate(0,150)")
-                    .attr("width", 140)
-                    .attr("height", 200)
-                    .selectAll("g")
-                    .data(needsColorDomain.reverse())
-                    .enter()
-                    .append("g")
-                    .attr("transform", function (d, i) { return "translate(0," + i * 20 + ")"; });
-
-                legend2.append("rect")
-                    .attr("width", 18)
-                    .attr("height", 18)
-                    .style("fill", needsColor);
-
-                legend2.append("text")
-                    .data(legendText2)
+                // Draw IDPs legend text
+                legendIDPs.append("text")
+                    .data(idpsLegendBreaks)
                     .attr("fill", "#fff")
                     .attr("x", 24)
                     .attr("y", 9)
@@ -431,31 +353,10 @@
                 baseLayer.attr('transform', d3.event.transform) // updated for d3 v4
             })
 
-        const countryLayerZoom = d3.zoom()
-            .on('zoom', () => {
-                countryLayer.style('stroke-width', `${1.1 / d3.event.transform.k}px`)
-                countryLayer.attr('transform', d3.event.transform) // updated for d3 v4
-            })
-
-        //svg.call(countryLayerZoom);
         svg.call(baseLayerZoom);
 
-
-        //var needsPromises = [];
-
-        ////files.forEach(function (url) {
-        //    needsPromises.push(d3.csv("data/mli_hno_2018.csv"))
-        ////});
-
-        //Promise.all(needsPromises).then(function (values) {
-        //    console.log(values);
-
-        //values.forEach(function (data, index, array) {
-        //    var dataFeatures = topojson.feature(data, data.objects.adm1_boundaries).features;
-        //});
-
+        // How hide Needs layer and legend
         var rodentsCheckbox = document.querySelector('input[id="needsButton"]');
-
         rodentsCheckbox.onchange = function () {
             if (this.checked) {
                 d3.selectAll(".bubble").attr("visibility", "visible");

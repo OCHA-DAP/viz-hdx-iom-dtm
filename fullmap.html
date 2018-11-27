@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <title>IOM DTM Dashboard</title>
 
+
     <!--Styles Css-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="css/dtmstyle.css">
@@ -18,45 +19,93 @@
     <!--JS internal fiels end-->
 </head>
 <body>
-    <div class="container">
-        <div class="row">
+    <div class="container-fluid" style="background-color:#49505b;">
+        <div class="row text-white">
             <div class="col-12 mt-4">
                 <h2>DTM Internal Displacement Dashboard</h2>
             </div>
-            <div class="col-12 text-muted">
+            <div class="col-12">
                 <small>(Burundi, CAR, Cameroon, Libya, Madagascar, Mali, Nigeria)</small>
             </div>
             <div class="col-12 mt-3">
-                <p>
+                <small>
                     The information represented in the dashboard below comes from the <u>seven countries</u> utilizing the Displacement Tracking Matrix (DTM)
                     system whose data is <u>available on the HDX platform</u>. The map and chart are live-updating, and so as new data is added to the platform,
                     the visuals will update to accurately reflect internal displacement in the countries.
-                </p>
+                </small>
             </div>
         </div>
         <!--Row-->
 
-        <div class="row mt-4" style="background-color:#353D49">
+        <div class="row mt-4">
             <div class="col">
                 <div class="row">
-                    <div class="col-lg-1" style="background-color:#49505b">
-                        <label class="switch">
-                            <input type="checkbox" id="needsButton">
-                            <span class="slider round"></span>
-                        </label>
-                        <div id="legend"></div>
+                    <div class="col-lg-2" style="background-color:#5b616b">
+                        <div class="row">
+                            <div class="col-12 mt-2">
+                                <span class="text-white">Global Stats</span>
+                                <hr class="divider bg-custom1" style="margin-top:0;">
+                            </div>
+                            <div class="col-12">
+                                <!--<div class="1card">
+                                <div class="card-body text-center">-->
+                                <span id="numOfCountries" class="spinner text-custom1 display-4-custom"></span>
+                                <span id="titleCountry" class="text-white"><small>Countries</small></span>
+                                <!--</div>
+                                </div>-->
+                            </div>
+                            <div class="col-12 mt-4">
+                                <!--<div class="card">
+                                <div class="card-body text-center">-->
+                                <span id="totalNumIDP" class="spinner text-custom1 display-4-custom"></span>
+                                <span id="titleTotalNumIDP" class="text-white"><small>IDPs</small></span>
+
+
+                                <!--</div>
+                                </div>-->
+                            </div>
+                            <div class="col-12 mt-4">
+                                <!--<div class="card">
+                                <div class="card-body text-center">-->
+                                <span id="totalNumHH" class="spinner text-custom1 display-4-custom"></span>
+                                <span id="titleTotalNumHH" class="text-white"><small>Households</small></span>
+
+                                <!--</div>
+                                </div>-->
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-lg-7">
+                    <div class="col-lg-5" style="background-color:#5b616b">
                         <div id="map">
                         </div>
                     </div>
-                    <div class="col-lg-4" style="background-color:#49505b">
+                    <div class="col-lg-1" style="background-color:#5b616b">
+                        <label class="switch mt-2">
+                            <input type="checkbox" id="needsButton">
+                            <span class="slider round"></span>
+                        </label>
+                        <br />
+                        <span style="font-size:0.8em" class="text-white"><small>People In Needs</small></span>
+                        <hr class="divider bg-custom1" style="margin-top:0;">
+                        <div id="legendNeeds"></div>
+                        <span style="font-size:0.8em" class="text-white"><small>No. of IDPs</small></span>
+                        <hr class="divider bg-custom1" style="margin-top:0;">
+                        <div id="legendIDPs"></div>
+                    </div>
+                    <div class="col-lg-3" style="background-color:#49505b">
                         <div id="chart"></div>
                     </div>
                 </div>
             </div>
         </div>
-
+        <div class="row" style="background-color:#49505b">
+            <div class="col-12 text-center text-white mt-3">
+                <small>Powered by the Humanitarian Exchange Language (HXL) data standard.</small>
+            </div>
+            <div class="col-12 text-center text-white">
+                <small>The boundaries and names shown on this map do not imply official endorsement or acceptance by the United Nations.</small>
+            </div>
+        </div>
     </div>
     <!-- <div class="tooltip" style="opacity: 9; left: 1101px; top: 300px;">This is a big test</div> -->
     <!--Container-->
