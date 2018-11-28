@@ -196,13 +196,18 @@ input:checked + .slider:before {
     line-height: .5;
 }
 
+.display-5-custom {
+    font-size: 2rem;
+    font-weight: 100;
+    line-height: .5;
+}
+
 .legend circle {
-    fill: none;
-    stroke: #ccc;
+    fill: #c7c72d;
 }
 
 .legend text {
-    fill: #777;
-    font: 10px sans-serif;
-    text-anchor: middle;
+    fill: #fff;
+    font: 80%;
+    font-size: 0.8em;
 }

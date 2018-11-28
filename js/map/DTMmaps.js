@@ -2,7 +2,7 @@
 
     //Frist draw Map of Africa and then pull and draw country layers.
     //Add Legends and Zoom
-    drawMapDTM: function drawMapDTM(idpsData) {
+    drawMapDTM: function drawMapDTM(data) {
 
         // Set width of the map on the basis of view port size TODO
         var vW = window.innerWidth;
@@ -38,14 +38,14 @@
         // The class is to select this element in DTMCharts.js
         var baseLayer = svg.append("g").attr("class", "test1");
 
-        
+
         // Draw Africa layer
-        d3.json("data/geo/topojson/africa_admin0.json").then(function (data) {
+        d3.json("data/geo/topojson/africa_admin0.json").then(function (africaJson) {
 
             baseLayer.append("g")
                 .attr("class", "baseLayer")
                 .selectAll("path")
-                .data(topojson.feature(data, data.objects.africa_admin0).features)
+                .data(topojson.feature(africaJson, africaJson.objects.africa_admin0).features)
                 .enter().append("path")
                 .attr("d", path)
         });
@@ -57,13 +57,13 @@
             .range(["#fff", "#afdbe1", "#9fd4db", "#7ec6cf", "#5fb8c3", "#4c939c", "#396e75"]);
 
         // Needs data color on the map
-        var needsColor = d3.scaleThreshold()
-            .domain([1, 1001, 10001, 50001, 100001, 500001, 1000001])
-            .range(["#fff", "#dddd81", "#d7d76c", "#d2d256", "#cccc42", "#c7c72d", "#b3b328"]);
+        //var needsColor = d3.scaleThreshold()
+        //    .domain([1, 1001, 10001, 50001, 100001, 500001, 1000001])
+        //    .range(["#fff", "#dddd81", "#d7d76c", "#d2d256", "#cccc42", "#c7c72d", "#b3b328"]);
 
         // The radius for needs data circles.
         var radius = d3.scaleSqrt()
-            .domain([0, 100000])
+            .domain([0, 500000])
             .range([0, 2]);
 
         // Admin1 boundaries URLs
@@ -88,16 +88,16 @@
 
             // Need data promise.
             Promise.resolve(d3.csv("data/hno.csv")).then(function (needsData) {
-
+                
                 // Loop on each Admin1-Boundaries data and add 'number of IDPs', countyr and admin1 name in the json
-                jsonData.forEach(function (data) {
-                    var dataFeatures = topojson.feature(data, data.objects.adm1_boundaries).features;
+                jsonData.forEach(function (jsonData) {
+                    var dataFeatures = topojson.feature(jsonData, jsonData.objects.adm1_boundaries).features;
 
                     for (item of dataFeatures) {
 
                         // IDPsData is DTM data passed from model.js where this function is called.
                         // IDPsData has number of IDPs, households, countyr and admin1 names
-                        for (const idp of idpsData) {
+                        for (const idp of data) {
 
                             // Since we have differetn json files and all files could have differnt column name
                             // so we have to check it with hasownproperty. If so then add a property 'idpsNumber'
@@ -169,7 +169,7 @@
                                 }
                             }
                         }
-                    }                    
+                    }
 
                     // Draw number of IDPs on the map
                     baseLayer.append("g")
@@ -190,6 +190,23 @@
                                 // return color scale
                                 return color(idpsNumber);
                             }
+                        })
+                        .on('mouseover', function (d) {
+                            
+                            var summaryHTML = `<div class="col-12 mt-2">                                                
+                                                    <span class="text-custom1 display-5" > ` + d.properties.Admin1NameTemp + `</span >    
+                                                    <span class="text-white" ><small>` + d.properties.CountryNameTemp + `</small></span >
+                            </div>
+                             
+                            <div class="col-12 mt-2">
+                                <span class="text-custom1 display-5" >` + d.properties.idpsNumber + `</span >
+                                    <span class="text-white"><small>IDPs</small></span>
+                            </div>
+                            <div class="col-12 mt-2">
+                                <span class="text-custom1 display-5" >` + d.properties.needsTemp + `</span >
+                                    <span class="text-white"><small>PIN</small></span>
+                            </div >`
+                            return document.getElementById('summary').innerHTML = summaryHTML;
                         })
                         .on("click", function (d) {
                             var x, y, k;
@@ -212,7 +229,7 @@
                                 .duration(750)
                                 .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")scale(" + k + ")translate(" + -x + "," + -y + ")")
                                 .style("stroke-width", 1.5 / k + "px");
-                        });                    
+                        });
 
                     // Draw circles on the map
                     baseLayer.append("g")
@@ -228,12 +245,12 @@
                             if (needs === undefined)
                                 needs = 0;
 
-                            needs = needs / 2;
-                            if (d.properties.CountryNameTemp === "Burundi" || d.properties.CountryNameTemp === "Nigeria")
-                                needs = needs / 6;
+                            //needs = needs / 2;
+                            //if (d.properties.CountryNameTemp === "Burundi" || d.properties.CountryNameTemp === "Nigeria")
+                            //    needs = needs / 6;
 
-                            if (d.properties.CountryNameTemp === "Cameroon")
-                                needs = needs / 2;
+                            //if (d.properties.CountryNameTemp === "Cameroon")
+                            //    needs = needs / 2;
 
                             return radius(needs);
                         })
@@ -242,73 +259,41 @@
                             needs = d.properties.needsTemp;
                             return !(needs === undefined || needs === 0);
                         })
-                        .style("fill", function (d) {
-                            let needs = 0;
-                            needs = d.properties.needsTemp;
-                            if (!(needs === undefined || needs === 0))
-                                return needsColor(needs);
-                        });
+                        .style("fill", "#c7c72d");
+                    //.style("fill", function (d) {
+                    //    let needs = 0;
+                    //    needs = d.properties.needsTemp;
+                    //    if (!(needs === undefined || needs === 0))
+                    //        return needsColor(needs);
+                    //});
                 });
 
-                
-
-                // Needs color domain
-                var needsColorDomain = needsColor.domain().slice();
-                needsColorDomain.splice(-2, 1);
-
                 // Map Legend Needs, in the begining it would be hidden
-                //var needsLegendBreaks = ["> 500K", "> 100K", "> 50K", "> 10K", " > 1K", "< 1K"];
-                //var legendNeeds = svgLegendNeeds.append("g")
-                //    .attr("class", "bubble")
-                //    .attr("visibility", "hidden")
-                //    .attr("transform", "translate(0,0)")
-                //    .attr("width", 140)
-                //    .attr("height", 200)
-                //    .selectAll("g")
-                //    .data(needsColorDomain.reverse())
-                //    .enter()
-                //    .append("g")
-                //    .attr("transform", function (d, i) { return "translate(0," + i * 20 + ")"; });
-
-                //// Needs colors
-                //legendNeeds.append("rect")
-                //    .attr("width", 18)
-                //    .attr("height", 18)
-                //    .style("fill", needsColor);
-
-                //// Needs text
-                //legendNeeds.append("text")
-                //    .data(needsLegendBreaks)
-                //    .attr("fill", "#fff")
-                //    .attr("x", 24)
-                //    .attr("y", 9)
-                //    .attr("dy", ".35em")
-                //    .text(function (d) { return d; });
-                //var radius = d3.scale.sqrt()
-                //    .domain([0, 1e6])
-                //    .range([0, 15]);
-
+                var needsLegendBreaks = ["> 300K", "> 100K", "> 10K"];
                 // Draw Legends of IDPS and Needs
                 var svgLegendNeeds = d3.select("#legendNeeds").append("svg").attr("width", "100px").attr("height", "100px");
-               
-                var legend = svgLegendNeeds.append("g")
-                    .attr("class", "legend")
-                    .attr("transform", "translate(50, 50)")
-                    .selectAll("g")
-                    .data([10000, 20000, 100000])
-                    .enter().append("g");
 
-                legend.append("circle")
-                    .attr("cy", function (d) { return -radius(d); })
-                    .attr("r", function (d, i) {
-                        console.log((radius(i)*1000) + 5);
-                        return radius(i) * 1000 + 5;
+                var legendNeeds = svgLegendNeeds.append("g")
+                    .attr("class", "legend bubble")
+                    .attr("visibility", "hidden")
+                    .attr("transform", "translate(10, 10)")
+                    .selectAll("g")
+                    .data([300001, 100001, 10001])
+                    .enter().append("g")
+                    .attr("transform", function (d, i) { return "translate(0," + i * 20 + ")"; });;
+
+                legendNeeds.append("circle")
+                    .attr("cx", 0)
+                    .attr("r", function (d) {
+                        //console.log(radius(d));
+                        return radius(d) * 5;
                     });
 
-                legend.append("text")
-                    .attr("y", function (d) { return -2 * radius(d); })
-                    .attr("dy", "1.3em")
-                    .text(d3.format(".1s"));
+                legendNeeds.append("text")
+                    .data(needsLegendBreaks)
+                    .attr("x", 12)
+                    .attr("dy", ".35em")
+                    .text(function (d) { return d; });
 
                 // IDPs color domain
                 var colorDomain = color.domain().slice();
@@ -321,6 +306,7 @@
                 var idpsLegendBreaks = ["> 500K", "> 100K", "> 50K", "> 10K", " > 1K", "< 1K"];
                 var legendIDPs = svgLegendIDPs.append("g")
                     .attr("transform", "translate(0,0)")
+                    .attr("class", "legend")
                     .attr("width", 140)
                     .attr("height", 200)
                     .selectAll("g")
@@ -338,7 +324,6 @@
                 // Draw IDPs legend text
                 legendIDPs.append("text")
                     .data(idpsLegendBreaks)
-                    .attr("fill", "#fff")
                     .attr("x", 24)
                     .attr("y", 9)
                     .attr("dy", ".35em")
