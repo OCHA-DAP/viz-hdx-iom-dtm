@@ -265,7 +265,6 @@
 
 
         function click(d) {
-            console.log(d);
             var baseLayer = d3.select(".test1");
             var x, y, k;
 
@@ -297,5 +296,7 @@
                 .attr("transform", "translate(" + 600 / 2 + "," + 420 / 2 + ")scale(" + k + ")translate(" + -x + "," + -y + ")")
                 .style("stroke-width", 1.5 / k + "px");
         }
+
+        $('#chart').removeClass("spinner");
     }
 }

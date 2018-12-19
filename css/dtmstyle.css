@@ -3,10 +3,10 @@
 }
 
 .spinner {
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     margin: 10px auto;
-    background-color: #333;
+    background-color: #ffff00;
     border-radius: 100%;
     -webkit-animation: sk-scaleout 1.0s infinite ease-in-out;
     animation: sk-scaleout 1.0s infinite ease-in-out;

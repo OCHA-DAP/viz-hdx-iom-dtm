@@ -30,7 +30,7 @@
             <div class="col-12 mt-3">
                 <small>
                     The information represented in the dashboard below comes from the <u>seven countries</u> utilizing the Displacement Tracking Matrix (DTM)
-                    system whose data is <u>available on the HDX platform</u>. The map and chart are live-updating, and so as new data is added to the platform,
+                    system whose data is <a href="https://data.humdata.org/search?q=dtm&ext_search_source=main-nav" target="_blank">available on the HDX platform</a>. The map and chart are live-updating, and so as new data is added to the platform,
                     the visuals will update to accurately reflect internal displacement in the countries.
                 </small>
             </div>
@@ -66,7 +66,7 @@
                         </div>
                     </div>
                     <div class="col-lg-5" style="background-color:#5b616b">
-                        <div id="map">
+                        <div class="spinner" id="map">
                         </div>
                     </div>
                     <div class="col-lg-1" style="background-color:#5b616b">
@@ -83,14 +83,14 @@
                         <div id="legendIDPs"></div>
                     </div>
                     <div class="col-lg-3" style="background-color:#49505b">
-                        <div id="chart"></div>
+                        <div class="spinner" id="chart"></div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="row" style="background-color:#49505b">
             <div class="col-12 text-center text-white mt-3">
-                <small>Powered by the Humanitarian Exchange Language (HXL) data standard.</small>
+                <small>Powered by the <a href="http://hxlstandard.org/" target="_blank">Humanitarian Exchange Language (HXL)</a> data standard.</small>
             </div>
             <div class="col-12 text-center text-white">
                 <small>The boundaries and names shown on this map do not imply official endorsement or acceptance by the United Nations.</small>
@@ -101,7 +101,7 @@
     <!--Container-->
     <!--Model Code-->
     <script src="js/chart/DTMCharts.js"></script>
-    <script src="js/map/DTMmaps.js"></script>
+    <!--<script src="js/map/DTMmaps.js"></script>-->
     <script src="js/models.js"></script>
     <script>
         Models.getDataDTM();

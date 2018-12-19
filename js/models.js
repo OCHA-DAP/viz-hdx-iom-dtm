@@ -39,7 +39,6 @@
 
             objIndex = data.findIndex((obj => obj["#adm1+code"] == 'MDG52'));
             data[objIndex]["#adm1+code"] = "MG52";
-
             objIndex = data.findIndex((obj => obj["#adm1+code"] == 'MLI01'));
             data[objIndex]["#adm1+code"] = "ML01";
             objIndex = data.findIndex((obj => obj["#adm1+code"] == 'MLI02'));
@@ -280,7 +279,6 @@
                             })
                             .on("click", function (d) {
                                 var x, y, k;
-                                console.log(path.centroid(d));
                                 if (d && centered !== d) {
                                     var centroid = path.centroid(d);
 
@@ -341,7 +339,6 @@
                     legendNeeds.append("circle")
                         .attr("cx", 0)
                         .attr("r", function (d) {
-                            //console.log(radius(d));
                             return radius(d) * 5;
                         });
 
@@ -408,6 +405,7 @@
                     };
                 });
             });
+            $('#map').removeClass("spinner");
 
         }).fail(function () {
             console.log("error");
