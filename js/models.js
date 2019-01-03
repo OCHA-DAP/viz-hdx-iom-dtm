@@ -10,14 +10,14 @@
             var needsDataChart;
 
             $.each(data, function (key, val) {
-                totalIdps += val["#population+idps+ind"];
-                totalHH += val["#population+hh+idps"];
+                totalIdps += val["#affected+idps+ind"];
+                totalHH += val["#affected+hh+idps"];
                 countriesOld.push(val["#country+name"]);
 
                 if (!countries[val["#country+name"]]) {
                     countries[val["#country+name"]] = 0
                 }
-                countries[val["#country+name"]] += val["#population+idps+ind"]
+                countries[val["#country+name"]] += val["#affected+idps+ind"]
             })
 
 
@@ -97,7 +97,7 @@
 
             // Draw Africa layer
             d3.json("data/geo/topojson/africa_admin0.json").then(function (africaJson) {
-
+                
                 baseLayer.append("g")
                     .attr("class", "baseLayer")
                     .selectAll("path")
@@ -159,14 +159,14 @@
                                 // so we have to check it with hasownproperty. If so then add a property 'idpsNumber'
                                 if (item.properties.hasOwnProperty("admin1Pcod")) {
                                     if (item.properties.admin1Pcod === idp['#adm1+code']) {
-                                        let number = idp["#population+idps+ind"];
+                                        let number = idp["#affected+idps+ind"];
                                         number = number === undefined ? 0 : number;
                                         item.properties.idpsNumber = number;
                                     }
                                 }
                                 if (item.properties.hasOwnProperty("ADM1_PCODE")) {
                                     if (item.properties.ADM1_PCODE === idp['#adm1+code']) {
-                                        let number = idp["#population+idps+ind"];
+                                        let number = idp["#affected+idps+ind"];
                                         number = number === undefined ? 0 : number;
                                         item.properties.idpsNumber = number;
                                     }
@@ -174,7 +174,7 @@
 
                                 if (item.properties.hasOwnProperty("ADM1_CODE")) {
                                     if (item.properties.ADM1_CODE === idp['#adm1+code']) {
-                                        let number = idp["#population+idps+ind"];
+                                        let number = idp["#affected+idps+ind"];
                                         number = number === undefined ? 0 : number;
                                         item.properties.idpsNumber = number;
                                     }

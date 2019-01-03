@@ -103,14 +103,14 @@
                             // so we have to check it with hasownproperty. If so then add a property 'idpsNumber'
                             if (item.properties.hasOwnProperty("admin1Pcod")) {
                                 if (item.properties.admin1Pcod === idp['#adm1+code']) {
-                                    let number = idp["#population+idps+ind"];
+                                    let number = idp["#affected+idps+ind"];
                                     number = number === undefined ? 0 : number;
                                     item.properties.idpsNumber = number;
                                 }
                             }
                             if (item.properties.hasOwnProperty("ADM1_PCODE")) {
                                 if (item.properties.ADM1_PCODE === idp['#adm1+code']) {
-                                    let number = idp["#population+idps+ind"];
+                                    let number = idp["#affected+idps+ind"];
                                     number = number === undefined ? 0 : number;
                                     item.properties.idpsNumber = number;
                                 }
@@ -118,7 +118,7 @@
 
                             if (item.properties.hasOwnProperty("ADM1_CODE")) {
                                 if (item.properties.ADM1_CODE === idp['#adm1+code']) {
-                                    let number = idp["#population+idps+ind"];
+                                    let number = idp["#affected+idps+ind"];
                                     number = number === undefined ? 0 : number;
                                     item.properties.idpsNumber = number;
                                 }
