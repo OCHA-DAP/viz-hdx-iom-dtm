@@ -143,7 +143,7 @@
             Promise.all(promises).then(function (jsonData) {
 
                 // Need data promise.
-                Promise.resolve(d3.csv("data/hno.csv")).then(function (needsData) {
+                Promise.resolve(d3.csv("https://proxy.hxlstandard.org/data/466c90/download/HNO_2018_HDX_Adm1_InNeed.csv")).then(function (needsData) {
                     needsDataChart = needsData;
                     // Loop on each Admin1-Boundaries data and add 'number of IDPs', countyr and admin1 name in the json
                     jsonData.forEach(function (jsonData) {
