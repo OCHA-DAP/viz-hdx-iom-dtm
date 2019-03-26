@@ -112,11 +112,6 @@
                 .domain([1, 1001, 10001, 50001, 100001, 500001, 1000001])
                 .range(["#fff", "#afdbe1", "#9fd4db", "#7ec6cf", "#5fb8c3", "#4c939c", "#396e75"]);
 
-            // Needs data color on the map
-            //var needsColor = d3.scaleThreshold()
-            //    .domain([1, 1001, 10001, 50001, 100001, 500001, 1000001])
-            //    .range(["#fff", "#dddd81", "#d7d76c", "#d2d256", "#cccc42", "#c7c72d", "#b3b328"]);
-
             // The radius for needs data circles.
             var radius = d3.scaleSqrt()
                 .domain([0, 500000])
@@ -130,7 +125,8 @@
                 "data/geo/topojson/lby_adm1.json",
                 "data/geo/topojson/mdg_adm1.json",
                 "data/geo/topojson/mli_adm1.json",
-                "data/geo/topojson/nga_adm1.json"
+                "data/geo/topojson/nga_adm1.json",
+                "data/geo/topojson/tcd_adm1.json"
             ];
 
             //Putll and push all topojson into 'promises' array.
@@ -143,7 +139,9 @@
             Promise.all(promises).then(function (jsonData) {
 
                 // Need data promise.
-                Promise.resolve(d3.csv("https://proxy.hxlstandard.org/data/466c90/download/HNO_2018_HDX_Adm1_InNeed.csv")).then(function (needsData) {
+                
+                //https://proxy.hxlstandard.org/data/466c90/download/HNO_2018_HDX_Adm1_InNeed.csv
+                Promise.resolve(d3.csv("https://proxy.hxlstandard.org/data/2d9f91/download/HNOs_2019_Adm_1_DTM_Viz.csv")).then(function (needsData) {
                     needsDataChart = needsData;
                     // Loop on each Admin1-Boundaries data and add 'number of IDPs', countyr and admin1 name in the json
                     jsonData.forEach(function (jsonData) {
