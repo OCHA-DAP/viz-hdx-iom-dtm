@@ -1,26 +1,26 @@
 ﻿var Models = {
     getDataDTM: function getDataDTM() {
-        url = 'https://proxy.hxlstandard.org/data/004c97/download/africa-dtm-baseline-assessments-topline.objects.json'
+        url = 'https://proxy.hxlstandard.org/data/5147f6/download/africa-dtm-baseline-assessments-topline.objects.json'
         $.getJSON(url, function (data) {
+            
             var totalIdps = 0;
             var totalHH = 0;
             var countriesOld = [];
             var idpsHHByCountryArray = [];
             var countries = {};
-            var needsDataChart;
-
+            //console.log(data);
             $.each(data, function (key, val) {
+                
                 totalIdps += val["#affected+idps+ind"];
                 totalHH += val["#affected+hh+idps"];
                 countriesOld.push(val["#country+name"]);
-
+                console.log(val["#country+name"]);
                 if (!countries[val["#country+name"]]) {
                     countries[val["#country+name"]] = 0
                 }
                 countries[val["#country+name"]] += val["#affected+idps+ind"]
             })
-
-
+            
             for (var country in countries) {
                 idpsHHByCountryArray.push({ country: country, idpsnumber: countries[country] })
             }
@@ -126,7 +126,10 @@
                 "data/geo/topojson/mdg_adm1.json",
                 "data/geo/topojson/mli_adm1.json",
                 "data/geo/topojson/nga_adm1.json",
-                "data/geo/topojson/tcd_adm1.json"
+                "data/geo/topojson/tcd_adm1.json",
+                "data/geo/topojson/moz_adm1.json",
+                "data/geo/topojson/eth_adm1.json",
+                "data/geo/topojson/bfa_adm1.json"
             ];
 
             //Putll and push all topojson into 'promises' array.
@@ -164,6 +167,7 @@
                                 }
                                 if (item.properties.hasOwnProperty("ADM1_PCODE")) {
                                     if (item.properties.ADM1_PCODE === idp['#adm1+code']) {
+                                        console.log(idp["#affected+idps+ind"]);
                                         let number = idp["#affected+idps+ind"];
                                         number = number === undefined ? 0 : number;
                                         item.properties.idpsNumber = number;
