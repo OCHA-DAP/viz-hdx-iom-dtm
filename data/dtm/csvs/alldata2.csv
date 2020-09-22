@@ -1,0 +1,153 @@
+#country+name,#country+code,#adm1+name,#adm1+code,#affected+hh+idps,#affected+idps+ind
+Burundi,BDI,Bubanza,BDI001,2036,10003
+Burundi,BDI,Bujumbura Mairie,BDI017,5794,27974
+Burundi,BDI,Bujumbura Rural,BDI002,5518,29174
+Burundi,BDI,Bururi,BDI003,461,1871
+Burundi,BDI,Cankuzo,BDI004,3127,14444
+Burundi,BDI,Cibitoke,BDI005,2430,12265
+Burundi,BDI,Gitega,BDI006,284,1238
+Burundi,BDI,Karuzi,BDI007,190,687
+Burundi,BDI,Kayanza,BDI008,725,1972
+Burundi,BDI,Kirundo,BDI009,1727,5375
+Burundi,BDI,Makamba,BDI010,1227,5319
+Burundi,BDI,Muramvya,BDI011,157,674
+Burundi,BDI,Muyinga,BDI012,1852,7454
+Burundi,BDI,Mwaro,BDI013,57,184
+Burundi,BDI,Ngozi,BDI014,218,724
+Burundi,BDI,Rumonge,BDI018,1573,7849
+Burundi,BDI,Rutana,BDI015,633,3068
+Burundi,BDI,Ruyigi,BDI016,1375,6335
+Cameroon,CMR,Extrême-Nord,CMR004,51930,321886
+Central African Republic,CAF,Bamingui-Bangoran,CF51,606,2716
+Central African Republic,CAF,Bangui,CF71,11888,59452
+Central African Republic,CAF,Basse-Kotto,CF61,37670,187450
+Central African Republic,CAF,Basse-kotto,CF61,852,4260
+Central African Republic,CAF,Haut-Mbomou,CF63,4039,18134
+Central African Republic,CAF,Haute-Kotto,CF52,15675,82921
+Central African Republic,CAF,Mbomou,CF62,15956,76585
+Central African Republic,CAF,Nana-Gribizi,CF42,6978,31737
+Central African Republic,CAF,Ombella MPoko,CF11,1624,8120
+Central African Republic,CAF,Ouaka,CF43,9335,45598
+Central African Republic,CAF,Ouham Pende,CF31,2295,11167
+Libya,LBY,East,LY01,13939,69815
+Libya,LBY,South,LY03,13466,67300
+Libya,LBY,West,LY02,56296,288599
+Madagascar,MDG,Androy,MDG52,1311,5250
+Mali,MLI,Bamako,MLI09,854,3107
+Mali,MLI,Gao,MLI07,18009,87574
+Mali,MLI,Kayes,MLI01,381,1624
+Mali,MLI,Kidal,MLI08,222,890
+Mali,MLI,Koulikouro,MLI02,467,2195
+Mali,MLI,Menaka,MLI10,,
+Mali,MLI,Mopti,MLI05,20101,113043
+Mali,MLI,Segou,MLI04,5326,29146
+Mali,MLI,Sikasso,MLI03,855,6300
+Mali,MLI,Tombouctou,MLI06,8869,43617
+Nigeria,NGA,ADAMAWA,NG002,36785,206969
+Nigeria,NGA,BAUCHI,NG005,10910,64777
+Nigeria,NGA,BORNO,NG008,338007,1547013
+Nigeria,NGA,GOMBE,NG016,5948,38793
+Nigeria,NGA,TARABA,NG035,16234,91179
+Nigeria,NGA,YOBE,NG036,21558,139393
+Mozambiaue,MOZ,,,,
+Mozambiaue,MOZ,Manica,MZ04,4692,22589
+Mozambiaue,MOZ,Sofala,MZ09,11304,54763
+Mozambiaue,MOZ,Tete,MZ10,708,3588
+Mozambiaue,MOZ,Zambezia,MZ11,2924,13280
+Ethiopia,ET,Afar,ET02,12856,35482
+Ethiopia,ET,Amhara,ET03,14106,29544
+Ethiopia,ET,Beneshangul Gumuz,ET06,2030,5378
+Ethiopia,ET,Dire Dawa,ET15,738,1836
+Ethiopia,ET,Gambella,ET12,5304,18462
+Ethiopia,ET,Hareri,ET13,569,1356
+Ethiopia,ET,Oromia,ET04,99831,301935
+Ethiopia,ET,Somali,ET05,140292,417317
+Ethiopia,ET,Tigray,ET01,47863,57787
+Chad,TCD,Lac,TD07,55185,236426
+Burkina Faso,BF,Est,BF52,1531,10293
+Zimbabwe,ZMB,Manicaland,ZW11,,36940
+Zimbabwe,ZMB,Masvingo,ZW18,,6412
+South Sudan,SSD,Central Equatoria,SS01,50218,220847
+South Sudan,SSD,Eastern Equatoria,SS02,10480,60076
+South Sudan,SSD,Jonglei,SS03,36756,207154
+South Sudan,SSD,Lakes,SS04,34906,187241
+South Sudan,SSD,Northern Bahr el Ghazal,SS05,15239,76387
+South Sudan,SSD,Unity,SS06,35013,225963
+South Sudan,SSD,Upper Nile,SS07,48027,233814
+South Sudan,SSD,Warrap,SS08,47448,246697
+South Sudan,SSD,Western Bahr el Ghazal,SS09,15714,71159
+South Sudan,SSD,Western Equatoria,SS10,13819,70916
+Yemen,YEM,Abyan,YE12,6170,37020
+Yemen,YEM,Aden,YE24,10507,63042
+Yemen,YEM,Al Bayda,YE14,10349,62094
+Yemen,YEM,Al Dhale'e,YE30,19040,114240
+Yemen,YEM,Al Hudaydah,YE18,71649,429894
+Yemen,YEM,Al Jawf,YE16,25654,153924
+Yemen,YEM,Al Maharah,YE28,2350,14100
+Yemen,YEM,Al Mahwit,YE27,7085,42510
+Yemen,YEM,Amanat Al Asimah,YE13,45126,270756
+Yemen,YEM,Amran,YE29,43886,263316
+Yemen,YEM,Dhamar,YE20,31558,189348
+Yemen,YEM,Hadramaut,YE19,5024,30144
+Yemen,YEM,Hajjah,YE17,80432,482592
+Yemen,YEM,Ibb,YE11,39110,234660
+Yemen,YEM,Lahj,YE25,13357,80142
+Yemen,YEM,Marib,YE26,139213,835278
+Yemen,YEM,Raymah,YE31,9632,57792
+Yemen,YEM,Sa'ada,YE22,28922,173532
+Yemen,YEM,Sana'a,YE23,18120,108720
+Yemen,YEM,Shabwah,YE21,6186,37116
+Yemen,YEM,Socotra,YE32,829,4974
+Yemen,YEM,Taizz,YE15,77234,463404
+Iraq,IRQ,Anbar,IQG01,6027,36162
+Iraq,IRQ,Babylon,IQG07,2834,17004
+Iraq,IRQ,Baghdad,IQG08,5839,35034
+Iraq,IRQ,Basrah,IQG02,1088,6528
+Iraq,IRQ,Dahuk,IQG09,53177,319062
+Iraq,IRQ,Diyala,IQG10,8948,53688
+Iraq,IRQ,Erbil,IQG11,39416,236496
+Iraq,IRQ,Kerbala,IQG12,2593,15558
+Iraq,IRQ,Kirkuk,IQG13,16671,100026
+Iraq,IRQ,Missan,IQG14,371,2226
+Iraq,IRQ,Muthanna,IQG03,166,996
+Iraq,IRQ,Najaf,IQG04,2091,12546
+Iraq,IRQ,Ninewa,IQG15,54013,324078
+Iraq,IRQ,Qadissiya,IQG05,648,3888
+Iraq,IRQ,Salah al-Din,IQG16,11450,68700
+Iraq,IRQ,Sulaymaniyah,IQG06,23310,139860
+Iraq,IRQ,Thi-Qar,IQG17,566,3396
+Iraq,IRQ,Wassit,IQG18,1014,6084
+Afghanistan,AFG,Badakhshan,AF17,15717,95420
+Afghanistan,AFG,Badghis,AF31,30999,186656
+Afghanistan,AFG,Baghlan,AF09,26117,158005
+Afghanistan,AFG,Balkh,AF21,25642,154985
+Afghanistan,AFG,Bamyan,AF10,14134,85239
+Afghanistan,AFG,Daykundi,AF24,8991,54375
+Afghanistan,AFG,Farah,AF33,40960,246667
+Afghanistan,AFG,Faryab,AF29,38895,233921
+Afghanistan,AFG,Ghazni,AF11,17079,103319
+Afghanistan,AFG,Ghor,AF23,11274,68188
+Afghanistan,AFG,Helmand,AF30,59224,356025
+Afghanistan,AFG,Herat,AF32,37739,227664
+Afghanistan,AFG,Jawzjan,AF28,40038,241072
+Afghanistan,AFG,Kabul,AF01,12269,74833
+Afghanistan,AFG,Kandahar,AF27,48549,292106
+Afghanistan,AFG,Kapisa,AF02,5505,33364
+Afghanistan,AFG,Khost,AF14,7254,44769
+Afghanistan,AFG,Kunar,AF15,22522,135865
+Afghanistan,AFG,Kunduz,AF19,26140,157550
+Afghanistan,AFG,Laghman,AF07,17131,103210
+Afghanistan,AFG,Logar,AF05,18595,112285
+Afghanistan,AFG,Nangarhar,AF06,57664,347484
+Afghanistan,AFG,Nimroz,AF34,2392,14857
+Afghanistan,AFG,Nuristan,AF16,1820,11022
+Afghanistan,AFG,Paktika,AF12,5270,32125
+Afghanistan,AFG,Paktya,AF13,7002,42768
+Afghanistan,AFG,Panjsher,AF08,642,3915
+Afghanistan,AFG,Parwan,AF03,15316,92696
+Afghanistan,AFG,Samangan,AF20,12234,73824
+Afghanistan,AFG,Sar-e-Pul,AF22,11920,72028
+Afghanistan,AFG,Takhar,AF18,16773,101741
+Afghanistan,AFG,Uruzgan,AF25,27824,167085
+Afghanistan,AFG,Wardak,AF04,44859,269613
+Afghanistan,AFG,Zabul,AF26,27599,166548

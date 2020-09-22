@@ -1,7 +1,7 @@
 ﻿var Charts = {
 
     drawIDPsByCountryChart: function drawIDPsByCountryChart(data, needsData, needsFlag) {
-
+        //console.log(data)
         for (let item in data) {
             let needsFilteredByCountry = needsData.filter(a => a["#country+name"] === data[item].country);
             let needs = needsFilteredByCountry.reduce((accumulator, currentValue) => +accumulator + +currentValue["#inneed"], 0)
@@ -87,12 +87,13 @@
 
             // Add label on the bars
             chart.append("g")
-                .attr("fill", "white")
+                        
                 .style("font", "12px sans-serif")
                 .selectAll("text")
                 .data(data)
                 .enter().append("text")
                 .attr("x", function (d, i) {
+                    //console.log(d.idpsnumber);
                     if (x(d.idpsnumber) < 60) {
                         return x(d.idpsnumber) + 4;
                     }
@@ -100,6 +101,12 @@
                         return x(d.idpsnumber) - 40;
                     }
 
+                })
+                .attr("fill", function (d, i) {
+                    if (i > 10)
+                        return ('black')
+                    else
+                        return ('white')
                 })
                 .attr("y", d => y(d.country) + y.bandwidth() / 2)
                 .attr("dy", "0.35em")
@@ -260,6 +267,16 @@
             { Country: "CAR", Centroid: [300.81861868726634, 238.0332723651224] },
             { Country: "Cameroon", Centroid: [256.4126253485365, 218.30474440925445] },
             { Country: "Nigeria", Centroid: [246.42532362153747, 212.1854992464543] },
+            { Country: "Afghanistan", Centroid: [34.525005, 66.035484] },
+            { Country: "Yemen", Centroid: [15.909788, 47.701413] },
+            { Country: "South Sudan", Centroid: [7.309350, 30.354533] },
+            { Country: "Iraq", Centroid: [33.374538, 43.927245] },
+            { Country: "Ethiopia", Centroid: [8.558784, 39.767049] },
+            { Country: "Chad", Centroid: [14.867398, 18.638371] },
+            { Country: "Mozambique", Centroid: [-17.147673, 36.000740] },
+            { Country: "Zimbabwe", Centroid: [-18.941534, 29.874212] },
+            { Country: "Burkina Faso", Centroid: [12.341002, -1.783835] },
+                        
         ]
 
 

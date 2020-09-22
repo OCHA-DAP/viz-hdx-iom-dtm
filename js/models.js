@@ -1,6 +1,7 @@
 ﻿var Models = {
     getDataDTM: function getDataDTM() {
-        url = 'https://proxy.hxlstandard.org/data/5147f6/download/africa-dtm-baseline-assessments-topline.objects.json'
+        
+        url = "data/dtm/csvs/alldata2.json"
         $.getJSON(url, function (data) {
             
             var totalIdps = 0;
@@ -8,17 +9,15 @@
             var countriesOld = [];
             var idpsHHByCountryArray = [];
             var countries = {};
-            //console.log(data);
+            console.log(data)
             $.each(data, function (key, val) {
-                
-                totalIdps += val["#affected+idps+ind"];
-                totalHH += val["#affected+hh+idps"];
+                totalIdps += Number(val["#affected+idps+ind"]);
+                totalHH += Number(val["#affected+hh+idps"]);
                 countriesOld.push(val["#country+name"]);
-                console.log(val["#country+name"]);
                 if (!countries[val["#country+name"]]) {
                     countries[val["#country+name"]] = 0
                 }
-                countries[val["#country+name"]] += val["#affected+idps+ind"]
+                countries[val["#country+name"]] += Number(val["#affected+idps+ind"])
             })
             
             for (var country in countries) {
@@ -36,7 +35,6 @@
 
             objIndex = idpsHHByCountryArray.findIndex((obj => obj.country == 'Central African Republic'));
             idpsHHByCountryArray[objIndex].country = 'CAR';
-
             objIndex = data.findIndex((obj => obj["#adm1+code"] == 'MDG52'));
             data[objIndex]["#adm1+code"] = "MG52";
             objIndex = data.findIndex((obj => obj["#adm1+code"] == 'MLI01'));
@@ -63,9 +61,9 @@
             // Set width of the map on the basis of view port size TODO
             var vW = window.innerWidth;
 
-            var svgWidth = 600;
-            if (vW < 1000 && vW > 980)
-                svgWidth = 500;
+            var svgWidth = 1200;
+            //if (vW < 1000 && vW > 980)
+            //    svgWidth = 600;
 
             // Height of the map
             var svgHeight = 600;
@@ -83,9 +81,9 @@
 
             // Set projection.
             var projection = d3.geoMercator()
-                .center([0, 0])
-                .scale(420)
-                .translate([width / 4, height / 2]);
+                .center([0,0])
+                .scale(200)
+                .translate([width / 2, height / 1.4]);
 
             // Set path on projection
             var path = d3.geoPath().projection(projection);
@@ -95,18 +93,16 @@
             var baseLayer = svg.append("g").attr("class", "test1");
 
 
-            // Draw Africa layer
-            d3.json("data/geo/topojson/africa_admin0.json").then(function (africaJson) {
-                
+            // Draw Countries layer
+            d3.json("data/geo/topojson/countries.json").then(function (africaJson) {
                 baseLayer.append("g")
                     .attr("class", "baseLayer")
                     .selectAll("path")
-                    .data(topojson.feature(africaJson, africaJson.objects.africa_admin0).features)
+                    .data(topojson.feature(africaJson, africaJson.objects.countries).features)
                     .enter().append("path")
                     .attr("d", path)
             });
-
-
+            
             // IDPs color on the map
             var color = d3.scaleThreshold()
                 .domain([1, 1001, 10001, 50001, 100001, 500001, 1000001])
@@ -129,7 +125,12 @@
                 "data/geo/topojson/tcd_adm1.json",
                 "data/geo/topojson/moz_adm1.json",
                 "data/geo/topojson/eth_adm1.json",
-                "data/geo/topojson/bfa_adm1.json"
+                "data/geo/topojson/zmb_adm1.json",
+                "data/geo/topojson/ssd_adm1.json",
+                "data/geo/topojson/bfa_adm1.json",
+                "data/geo/topojson/afg_adm1.json",
+                "data/geo/topojson/irq_adm1.json",
+                "data/geo/topojson/yem_adm1.json"
             ];
 
             //Putll and push all topojson into 'promises' array.
@@ -140,16 +141,14 @@
 
             // All async call to topojson
             Promise.all(promises).then(function (jsonData) {
-
                 // Need data promise.
-                
-                //https://proxy.hxlstandard.org/data/466c90/download/HNO_2018_HDX_Adm1_InNeed.csv
-                Promise.resolve(d3.csv("https://proxy.hxlstandard.org/data/2d9f91/download/HNOs_2019_Adm_1_DTM_Viz.csv")).then(function (needsData) {
-                    needsDataChart = needsData;
+                //Promise.resolve(d3.csv("data/dtm/csvs/alldata2.csv")).then(function (needsData) {
+                 //   needsDataChart = needsData;
+                needsData = data;
                     // Loop on each Admin1-Boundaries data and add 'number of IDPs', countyr and admin1 name in the json
                     jsonData.forEach(function (jsonData) {
                         var dataFeatures = topojson.feature(jsonData, jsonData.objects.adm1_boundaries).features;
-
+                        console.log(dataFeatures)
                         for (item of dataFeatures) {
 
                             // IDPsData is DTM data passed from model.js where this function is called.
@@ -165,9 +164,12 @@
                                         item.properties.idpsNumber = number;
                                     }
                                 }
+                                else {
+                                    //console.log('false')
+                                    //console.log(item.properties.admin1Pcod)
+                                }
                                 if (item.properties.hasOwnProperty("ADM1_PCODE")) {
                                     if (item.properties.ADM1_PCODE === idp['#adm1+code']) {
-                                        console.log(idp["#affected+idps+ind"]);
                                         let number = idp["#affected+idps+ind"];
                                         number = number === undefined ? 0 : number;
                                         item.properties.idpsNumber = number;
@@ -181,7 +183,6 @@
                                         item.properties.idpsNumber = number;
                                     }
                                 }
-
                                 // Add 'CountryNameTemp' and 'Admin1NameTemp' properties for consistency
                                 if (item.properties.hasOwnProperty("admin0Name")) {
                                     item.properties.CountryNameTemp = item.properties.admin0Name;
@@ -228,7 +229,7 @@
                                 }
                             }
                         }
-
+                        
                         // Draw number of IDPs on the map
                         baseLayer.append("g")
                             .selectAll("path")
@@ -368,13 +369,13 @@
                         .enter()
                         .append("g")
                         .attr("transform", function (d, i) { return "translate(0," + i * 20 + ")"; });
-
+                    
                     // Draw rectangles
                     legendIDPs.append("rect")
                         .attr("width", 18)
                         .attr("height", 18)
                         .style("fill", color);
-
+                    
                     // Draw IDPs legend text
                     legendIDPs.append("text")
                         .data(idpsLegendBreaks)
@@ -384,7 +385,7 @@
                         .text(function (d) { return d; });
 
                     Charts.drawIDPsByCountryChart(idpsHHByCountryArray, needsData, 0)
-
+                    
                     // zoom and pan
                     const baseLayerZoom = d3.zoom()
                         .on('zoom', () => {
@@ -395,20 +396,21 @@
                     svg.call(baseLayerZoom);
 
                     // How hide Needs layer and legend
-                    var rodentsCheckbox = document.querySelector('input[id="needsButton"]');
-                    rodentsCheckbox.onchange = function () {
-                        if (this.checked) {
-                            d3.selectAll(".bubble").attr("visibility", "visible");
-                            Charts.drawIDPsByCountryChart(idpsHHByCountryArray, needsData, 1)
-                        } else {
-                            d3.selectAll(".bubble").attr("visibility", "hidden");
-                            Charts.drawIDPsByCountryChart(idpsHHByCountryArray, needsData, 0)
-                        }
-                    };
-                });
+                    //var rodentsCheckbox = document.querySelector('input[id="needsButton"]');
+                    //rodentsCheckbox.onchange = function () {
+                    //    if (this.checked) {
+                    //        d3.selectAll(".bubble").attr("visibility", "visible");
+                    //        Charts.drawIDPsByCountryChart(idpsHHByCountryArray, needsData, 1)
+                    //    } else {
+                    //        d3.selectAll(".bubble").attr("visibility", "hidden");
+                    //        Charts.drawIDPsByCountryChart(idpsHHByCountryArray, needsData, 0)
+                    //    }
+                    //};
+                    
+                //});
             });
             $('#map').removeClass("spinner");
-
+            
         }).fail(function () {
             console.log("error");
         });

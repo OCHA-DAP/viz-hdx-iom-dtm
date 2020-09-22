@@ -1,0 +1,1218 @@
+[
+  {
+    "#country+name": "Burundi",
+    "#country+code": "BDI",
+    "#adm1+name": "Bubanza",
+    "#adm1+code": "BDI001",
+    "#affected+hh+idps": 2036,
+    "#affected+idps+ind": 10003
+  },
+  {
+    "#country+name": "Burundi",
+    "#country+code": "BDI",
+    "#adm1+name": "Bujumbura Mairie",
+    "#adm1+code": "BDI017",
+    "#affected+hh+idps": 5794,
+    "#affected+idps+ind": 27974
+  },
+  {
+    "#country+name": "Burundi",
+    "#country+code": "BDI",
+    "#adm1+name": "Bujumbura Rural",
+    "#adm1+code": "BDI002",
+    "#affected+hh+idps": 5518,
+    "#affected+idps+ind": 29174
+  },
+  {
+    "#country+name": "Burundi",
+    "#country+code": "BDI",
+    "#adm1+name": "Bururi",
+    "#adm1+code": "BDI003",
+    "#affected+hh+idps": 461,
+    "#affected+idps+ind": 1871
+  },
+  {
+    "#country+name": "Burundi",
+    "#country+code": "BDI",
+    "#adm1+name": "Cankuzo",
+    "#adm1+code": "BDI004",
+    "#affected+hh+idps": 3127,
+    "#affected+idps+ind": 14444
+  },
+  {
+    "#country+name": "Burundi",
+    "#country+code": "BDI",
+    "#adm1+name": "Cibitoke",
+    "#adm1+code": "BDI005",
+    "#affected+hh+idps": 2430,
+    "#affected+idps+ind": 12265
+  },
+  {
+    "#country+name": "Burundi",
+    "#country+code": "BDI",
+    "#adm1+name": "Gitega",
+    "#adm1+code": "BDI006",
+    "#affected+hh+idps": 284,
+    "#affected+idps+ind": 1238
+  },
+  {
+    "#country+name": "Burundi",
+    "#country+code": "BDI",
+    "#adm1+name": "Karuzi",
+    "#adm1+code": "BDI007",
+    "#affected+hh+idps": 190,
+    "#affected+idps+ind": 687
+  },
+  {
+    "#country+name": "Burundi",
+    "#country+code": "BDI",
+    "#adm1+name": "Kayanza",
+    "#adm1+code": "BDI008",
+    "#affected+hh+idps": 725,
+    "#affected+idps+ind": 1972
+  },
+  {
+    "#country+name": "Burundi",
+    "#country+code": "BDI",
+    "#adm1+name": "Kirundo",
+    "#adm1+code": "BDI009",
+    "#affected+hh+idps": 1727,
+    "#affected+idps+ind": 5375
+  },
+  {
+    "#country+name": "Burundi",
+    "#country+code": "BDI",
+    "#adm1+name": "Makamba",
+    "#adm1+code": "BDI010",
+    "#affected+hh+idps": 1227,
+    "#affected+idps+ind": 5319
+  },
+  {
+    "#country+name": "Burundi",
+    "#country+code": "BDI",
+    "#adm1+name": "Muramvya",
+    "#adm1+code": "BDI011",
+    "#affected+hh+idps": 157,
+    "#affected+idps+ind": 674
+  },
+  {
+    "#country+name": "Burundi",
+    "#country+code": "BDI",
+    "#adm1+name": "Muyinga",
+    "#adm1+code": "BDI012",
+    "#affected+hh+idps": 1852,
+    "#affected+idps+ind": 7454
+  },
+  {
+    "#country+name": "Burundi",
+    "#country+code": "BDI",
+    "#adm1+name": "Mwaro",
+    "#adm1+code": "BDI013",
+    "#affected+hh+idps": 57,
+    "#affected+idps+ind": 184
+  },
+  {
+    "#country+name": "Burundi",
+    "#country+code": "BDI",
+    "#adm1+name": "Ngozi",
+    "#adm1+code": "BDI014",
+    "#affected+hh+idps": 218,
+    "#affected+idps+ind": 724
+  },
+  {
+    "#country+name": "Burundi",
+    "#country+code": "BDI",
+    "#adm1+name": "Rumonge",
+    "#adm1+code": "BDI018",
+    "#affected+hh+idps": 1573,
+    "#affected+idps+ind": 7849
+  },
+  {
+    "#country+name": "Burundi",
+    "#country+code": "BDI",
+    "#adm1+name": "Rutana",
+    "#adm1+code": "BDI015",
+    "#affected+hh+idps": 633,
+    "#affected+idps+ind": 3068
+  },
+  {
+    "#country+name": "Burundi",
+    "#country+code": "BDI",
+    "#adm1+name": "Ruyigi",
+    "#adm1+code": "BDI016",
+    "#affected+hh+idps": 1375,
+    "#affected+idps+ind": 6335
+  },
+  {
+    "#country+name": "Cameroon",
+    "#country+code": "CMR",
+    "#adm1+name": "Extrême-Nord",
+    "#adm1+code": "CMR004",
+    "#affected+hh+idps": 51930,
+    "#affected+idps+ind": 321886
+  },
+  {
+    "#country+name": "Central African Republic",
+    "#country+code": "CAF",
+    "#adm1+name": "Bamingui-Bangoran",
+    "#adm1+code": "CF51",
+    "#affected+hh+idps": 606,
+    "#affected+idps+ind": 2716
+  },
+  {
+    "#country+name": "Central African Republic",
+    "#country+code": "CAF",
+    "#adm1+name": "Bangui",
+    "#adm1+code": "CF71",
+    "#affected+hh+idps": 11888,
+    "#affected+idps+ind": 59452
+  },
+  {
+    "#country+name": "Central African Republic",
+    "#country+code": "CAF",
+    "#adm1+name": "Basse-Kotto",
+    "#adm1+code": "CF61",
+    "#affected+hh+idps": 37670,
+    "#affected+idps+ind": 187450
+  },
+  {
+    "#country+name": "Central African Republic",
+    "#country+code": "CAF",
+    "#adm1+name": "Basse-kotto",
+    "#adm1+code": "CF61",
+    "#affected+hh+idps": 852,
+    "#affected+idps+ind": 4260
+  },
+  {
+    "#country+name": "Central African Republic",
+    "#country+code": "CAF",
+    "#adm1+name": "Haut-Mbomou",
+    "#adm1+code": "CF63",
+    "#affected+hh+idps": 4039,
+    "#affected+idps+ind": 18134
+  },
+  {
+    "#country+name": "Central African Republic",
+    "#country+code": "CAF",
+    "#adm1+name": "Haute-Kotto",
+    "#adm1+code": "CF52",
+    "#affected+hh+idps": 15675,
+    "#affected+idps+ind": 82921
+  },
+  {
+    "#country+name": "Central African Republic",
+    "#country+code": "CAF",
+    "#adm1+name": "Mbomou",
+    "#adm1+code": "CF62",
+    "#affected+hh+idps": 15956,
+    "#affected+idps+ind": 76585
+  },
+  {
+    "#country+name": "Central African Republic",
+    "#country+code": "CAF",
+    "#adm1+name": "Nana-Gribizi",
+    "#adm1+code": "CF42",
+    "#affected+hh+idps": 6978,
+    "#affected+idps+ind": 31737
+  },
+  {
+    "#country+name": "Central African Republic",
+    "#country+code": "CAF",
+    "#adm1+name": "Ombella MPoko",
+    "#adm1+code": "CF11",
+    "#affected+hh+idps": 1624,
+    "#affected+idps+ind": 8120
+  },
+  {
+    "#country+name": "Central African Republic",
+    "#country+code": "CAF",
+    "#adm1+name": "Ouaka",
+    "#adm1+code": "CF43",
+    "#affected+hh+idps": 9335,
+    "#affected+idps+ind": 45598
+  },
+  {
+    "#country+name": "Central African Republic",
+    "#country+code": "CAF",
+    "#adm1+name": "Ouham Pende",
+    "#adm1+code": "CF31",
+    "#affected+hh+idps": 2295,
+    "#affected+idps+ind": 11167
+  },
+  {
+    "#country+name": "Libya",
+    "#country+code": "LBY",
+    "#adm1+name": "East",
+    "#adm1+code": "LY01",
+    "#affected+hh+idps": 13939,
+    "#affected+idps+ind": 69815
+  },
+  {
+    "#country+name": "Libya",
+    "#country+code": "LBY",
+    "#adm1+name": "South",
+    "#adm1+code": "LY03",
+    "#affected+hh+idps": 13466,
+    "#affected+idps+ind": 67300
+  },
+  {
+    "#country+name": "Libya",
+    "#country+code": "LBY",
+    "#adm1+name": "West",
+    "#adm1+code": "LY02",
+    "#affected+hh+idps": 56296,
+    "#affected+idps+ind": 288599
+  },
+  {
+    "#country+name": "Madagascar",
+    "#country+code": "MDG",
+    "#adm1+name": "Androy",
+    "#adm1+code": "MDG52",
+    "#affected+hh+idps": 1311,
+    "#affected+idps+ind": 5250
+  },
+  {
+    "#country+name": "Mali",
+    "#country+code": "MLI",
+    "#adm1+name": "Bamako",
+    "#adm1+code": "MLI09",
+    "#affected+hh+idps": 854,
+    "#affected+idps+ind": 3107
+  },
+  {
+    "#country+name": "Mali",
+    "#country+code": "MLI",
+    "#adm1+name": "Gao",
+    "#adm1+code": "MLI07",
+    "#affected+hh+idps": 18009,
+    "#affected+idps+ind": 87574
+  },
+  {
+    "#country+name": "Mali",
+    "#country+code": "MLI",
+    "#adm1+name": "Kayes",
+    "#adm1+code": "MLI01",
+    "#affected+hh+idps": 381,
+    "#affected+idps+ind": 1624
+  },
+  {
+    "#country+name": "Mali",
+    "#country+code": "MLI",
+    "#adm1+name": "Kidal",
+    "#adm1+code": "MLI08",
+    "#affected+hh+idps": 222,
+    "#affected+idps+ind": 890
+  },
+  {
+    "#country+name": "Mali",
+    "#country+code": "MLI",
+    "#adm1+name": "Koulikouro",
+    "#adm1+code": "MLI02",
+    "#affected+hh+idps": 467,
+    "#affected+idps+ind": 2195
+  },
+  {
+    "#country+name": "Mali",
+    "#country+code": "MLI",
+    "#adm1+name": "Menaka",
+    "#adm1+code": "MLI10",
+    "#affected+hh+idps": "",
+    "#affected+idps+ind": ""
+  },
+  {
+    "#country+name": "Mali",
+    "#country+code": "MLI",
+    "#adm1+name": "Mopti",
+    "#adm1+code": "MLI05",
+    "#affected+hh+idps": 20101,
+    "#affected+idps+ind": 113043
+  },
+  {
+    "#country+name": "Mali",
+    "#country+code": "MLI",
+    "#adm1+name": "Segou",
+    "#adm1+code": "MLI04",
+    "#affected+hh+idps": 5326,
+    "#affected+idps+ind": 29146
+  },
+  {
+    "#country+name": "Mali",
+    "#country+code": "MLI",
+    "#adm1+name": "Sikasso",
+    "#adm1+code": "MLI03",
+    "#affected+hh+idps": 855,
+    "#affected+idps+ind": 6300
+  },
+  {
+    "#country+name": "Mali",
+    "#country+code": "MLI",
+    "#adm1+name": "Tombouctou",
+    "#adm1+code": "MLI06",
+    "#affected+hh+idps": 8869,
+    "#affected+idps+ind": 43617
+  },
+  {
+    "#country+name": "Nigeria",
+    "#country+code": "NGA",
+    "#adm1+name": "ADAMAWA",
+    "#adm1+code": "NG002",
+    "#affected+hh+idps": 36785,
+    "#affected+idps+ind": 206969
+  },
+  {
+    "#country+name": "Nigeria",
+    "#country+code": "NGA",
+    "#adm1+name": "BAUCHI",
+    "#adm1+code": "NG005",
+    "#affected+hh+idps": 10910,
+    "#affected+idps+ind": 64777
+  },
+  {
+    "#country+name": "Nigeria",
+    "#country+code": "NGA",
+    "#adm1+name": "BORNO",
+    "#adm1+code": "NG008",
+    "#affected+hh+idps": 338007,
+    "#affected+idps+ind": 1547013
+  },
+  {
+    "#country+name": "Nigeria",
+    "#country+code": "NGA",
+    "#adm1+name": "GOMBE",
+    "#adm1+code": "NG016",
+    "#affected+hh+idps": 5948,
+    "#affected+idps+ind": 38793
+  },
+  {
+    "#country+name": "Nigeria",
+    "#country+code": "NGA",
+    "#adm1+name": "TARABA",
+    "#adm1+code": "NG035",
+    "#affected+hh+idps": 16234,
+    "#affected+idps+ind": 91179
+  },
+  {
+    "#country+name": "Nigeria",
+    "#country+code": "NGA",
+    "#adm1+name": "YOBE",
+    "#adm1+code": "NG036",
+    "#affected+hh+idps": 21558,
+    "#affected+idps+ind": 139393
+  },
+  {
+    "#country+name": "Mozambiaue",
+    "#country+code": "MOZ",
+    "#adm1+name": "",
+    "#adm1+code": "",
+    "#affected+hh+idps": "",
+    "#affected+idps+ind": ""
+  },
+  {
+    "#country+name": "Mozambiaue",
+    "#country+code": "MOZ",
+    "#adm1+name": "Manica",
+    "#adm1+code": "MZ04",
+    "#affected+hh+idps": 4692,
+    "#affected+idps+ind": 22589
+  },
+  {
+    "#country+name": "Mozambiaue",
+    "#country+code": "MOZ",
+    "#adm1+name": "Sofala",
+    "#adm1+code": "MZ09",
+    "#affected+hh+idps": 11304,
+    "#affected+idps+ind": 54763
+  },
+  {
+    "#country+name": "Mozambiaue",
+    "#country+code": "MOZ",
+    "#adm1+name": "Tete",
+    "#adm1+code": "MZ10",
+    "#affected+hh+idps": 708,
+    "#affected+idps+ind": 3588
+  },
+  {
+    "#country+name": "Mozambiaue",
+    "#country+code": "MOZ",
+    "#adm1+name": "Zambezia",
+    "#adm1+code": "MZ11",
+    "#affected+hh+idps": 2924,
+    "#affected+idps+ind": 13280
+  },
+  {
+    "#country+name": "Ethiopia",
+    "#country+code": "ET",
+    "#adm1+name": "Afar",
+    "#adm1+code": "ET02",
+    "#affected+hh+idps": 12856,
+    "#affected+idps+ind": 35482
+  },
+  {
+    "#country+name": "Ethiopia",
+    "#country+code": "ET",
+    "#adm1+name": "Amhara",
+    "#adm1+code": "ET03",
+    "#affected+hh+idps": 14106,
+    "#affected+idps+ind": 29544
+  },
+  {
+    "#country+name": "Ethiopia",
+    "#country+code": "ET",
+    "#adm1+name": "Beneshangul Gumuz",
+    "#adm1+code": "ET06",
+    "#affected+hh+idps": 2030,
+    "#affected+idps+ind": 5378
+  },
+  {
+    "#country+name": "Ethiopia",
+    "#country+code": "ET",
+    "#adm1+name": "Dire Dawa",
+    "#adm1+code": "ET15",
+    "#affected+hh+idps": 738,
+    "#affected+idps+ind": 1836
+  },
+  {
+    "#country+name": "Ethiopia",
+    "#country+code": "ET",
+    "#adm1+name": "Gambella",
+    "#adm1+code": "ET12",
+    "#affected+hh+idps": 5304,
+    "#affected+idps+ind": 18462
+  },
+  {
+    "#country+name": "Ethiopia",
+    "#country+code": "ET",
+    "#adm1+name": "Hareri",
+    "#adm1+code": "ET13",
+    "#affected+hh+idps": 569,
+    "#affected+idps+ind": 1356
+  },
+  {
+    "#country+name": "Ethiopia",
+    "#country+code": "ET",
+    "#adm1+name": "Oromia",
+    "#adm1+code": "ET04",
+    "#affected+hh+idps": 99831,
+    "#affected+idps+ind": 301935
+  },
+  {
+    "#country+name": "Ethiopia",
+    "#country+code": "ET",
+    "#adm1+name": "Somali",
+    "#adm1+code": "ET05",
+    "#affected+hh+idps": 140292,
+    "#affected+idps+ind": 417317
+  },
+  {
+    "#country+name": "Ethiopia",
+    "#country+code": "ET",
+    "#adm1+name": "Tigray",
+    "#adm1+code": "ET01",
+    "#affected+hh+idps": 47863,
+    "#affected+idps+ind": 57787
+  },
+  {
+    "#country+name": "Chad",
+    "#country+code": "TCD",
+    "#adm1+name": "Lac",
+    "#adm1+code": "TD07",
+    "#affected+hh+idps": 55185,
+    "#affected+idps+ind": 236426
+  },
+  {
+    "#country+name": "Burkina Faso",
+    "#country+code": "BF",
+    "#adm1+name": "Est",
+    "#adm1+code": "BF52",
+    "#affected+hh+idps": 1531,
+    "#affected+idps+ind": 10293
+  },
+  {
+    "#country+name": "Zimbabwe",
+    "#country+code": "ZMB",
+    "#adm1+name": "Manicaland",
+    "#adm1+code": "ZW11",
+    "#affected+hh+idps": "",
+    "#affected+idps+ind": 36940
+  },
+  {
+    "#country+name": "Zimbabwe",
+    "#country+code": "ZMB",
+    "#adm1+name": "Masvingo",
+    "#adm1+code": "ZW18",
+    "#affected+hh+idps": "",
+    "#affected+idps+ind": 6412
+  },
+  {
+    "#country+name": "South Sudan",
+    "#country+code": "SSD",
+    "#adm1+name": "Central Equatoria",
+    "#adm1+code": "SS01",
+    "#affected+hh+idps": 50218,
+    "#affected+idps+ind": 220847
+  },
+  {
+    "#country+name": "South Sudan",
+    "#country+code": "SSD",
+    "#adm1+name": "Eastern Equatoria",
+    "#adm1+code": "SS02",
+    "#affected+hh+idps": 10480,
+    "#affected+idps+ind": 60076
+  },
+  {
+    "#country+name": "South Sudan",
+    "#country+code": "SSD",
+    "#adm1+name": "Jonglei",
+    "#adm1+code": "SS03",
+    "#affected+hh+idps": 36756,
+    "#affected+idps+ind": 207154
+  },
+  {
+    "#country+name": "South Sudan",
+    "#country+code": "SSD",
+    "#adm1+name": "Lakes",
+    "#adm1+code": "SS04",
+    "#affected+hh+idps": 34906,
+    "#affected+idps+ind": 187241
+  },
+  {
+    "#country+name": "South Sudan",
+    "#country+code": "SSD",
+    "#adm1+name": "Northern Bahr el Ghazal",
+    "#adm1+code": "SS05",
+    "#affected+hh+idps": 15239,
+    "#affected+idps+ind": 76387
+  },
+  {
+    "#country+name": "South Sudan",
+    "#country+code": "SSD",
+    "#adm1+name": "Unity",
+    "#adm1+code": "SS06",
+    "#affected+hh+idps": 35013,
+    "#affected+idps+ind": 225963
+  },
+  {
+    "#country+name": "South Sudan",
+    "#country+code": "SSD",
+    "#adm1+name": "Upper Nile",
+    "#adm1+code": "SS07",
+    "#affected+hh+idps": 48027,
+    "#affected+idps+ind": 233814
+  },
+  {
+    "#country+name": "South Sudan",
+    "#country+code": "SSD",
+    "#adm1+name": "Warrap",
+    "#adm1+code": "SS08",
+    "#affected+hh+idps": 47448,
+    "#affected+idps+ind": 246697
+  },
+  {
+    "#country+name": "South Sudan",
+    "#country+code": "SSD",
+    "#adm1+name": "Western Bahr el Ghazal",
+    "#adm1+code": "SS09",
+    "#affected+hh+idps": 15714,
+    "#affected+idps+ind": 71159
+  },
+  {
+    "#country+name": "South Sudan",
+    "#country+code": "SSD",
+    "#adm1+name": "Western Equatoria",
+    "#adm1+code": "SS10",
+    "#affected+hh+idps": 13819,
+    "#affected+idps+ind": 70916
+  },
+  {
+    "#country+name": "Yemen",
+    "#country+code": "YEM",
+    "#adm1+name": "Abyan",
+    "#adm1+code": "YE12",
+    "#affected+hh+idps": 6170,
+    "#affected+idps+ind": 37020
+  },
+  {
+    "#country+name": "Yemen",
+    "#country+code": "YEM",
+    "#adm1+name": "Aden",
+    "#adm1+code": "YE24",
+    "#affected+hh+idps": 10507,
+    "#affected+idps+ind": 63042
+  },
+  {
+    "#country+name": "Yemen",
+    "#country+code": "YEM",
+    "#adm1+name": "Al Bayda",
+    "#adm1+code": "YE14",
+    "#affected+hh+idps": 10349,
+    "#affected+idps+ind": 62094
+  },
+  {
+    "#country+name": "Yemen",
+    "#country+code": "YEM",
+    "#adm1+name": "Al Dhale'e",
+    "#adm1+code": "YE30",
+    "#affected+hh+idps": 19040,
+    "#affected+idps+ind": 114240
+  },
+  {
+    "#country+name": "Yemen",
+    "#country+code": "YEM",
+    "#adm1+name": "Al Hudaydah",
+    "#adm1+code": "YE18",
+    "#affected+hh+idps": 71649,
+    "#affected+idps+ind": 429894
+  },
+  {
+    "#country+name": "Yemen",
+    "#country+code": "YEM",
+    "#adm1+name": "Al Jawf",
+    "#adm1+code": "YE16",
+    "#affected+hh+idps": 25654,
+    "#affected+idps+ind": 153924
+  },
+  {
+    "#country+name": "Yemen",
+    "#country+code": "YEM",
+    "#adm1+name": "Al Maharah",
+    "#adm1+code": "YE28",
+    "#affected+hh+idps": 2350,
+    "#affected+idps+ind": 14100
+  },
+  {
+    "#country+name": "Yemen",
+    "#country+code": "YEM",
+    "#adm1+name": "Al Mahwit",
+    "#adm1+code": "YE27",
+    "#affected+hh+idps": 7085,
+    "#affected+idps+ind": 42510
+  },
+  {
+    "#country+name": "Yemen",
+    "#country+code": "YEM",
+    "#adm1+name": "Amanat Al Asimah",
+    "#adm1+code": "YE13",
+    "#affected+hh+idps": 45126,
+    "#affected+idps+ind": 270756
+  },
+  {
+    "#country+name": "Yemen",
+    "#country+code": "YEM",
+    "#adm1+name": "Amran",
+    "#adm1+code": "YE29",
+    "#affected+hh+idps": 43886,
+    "#affected+idps+ind": 263316
+  },
+  {
+    "#country+name": "Yemen",
+    "#country+code": "YEM",
+    "#adm1+name": "Dhamar",
+    "#adm1+code": "YE20",
+    "#affected+hh+idps": 31558,
+    "#affected+idps+ind": 189348
+  },
+  {
+    "#country+name": "Yemen",
+    "#country+code": "YEM",
+    "#adm1+name": "Hadramaut",
+    "#adm1+code": "YE19",
+    "#affected+hh+idps": 5024,
+    "#affected+idps+ind": 30144
+  },
+  {
+    "#country+name": "Yemen",
+    "#country+code": "YEM",
+    "#adm1+name": "Hajjah",
+    "#adm1+code": "YE17",
+    "#affected+hh+idps": 80432,
+    "#affected+idps+ind": 482592
+  },
+  {
+    "#country+name": "Yemen",
+    "#country+code": "YEM",
+    "#adm1+name": "Ibb",
+    "#adm1+code": "YE11",
+    "#affected+hh+idps": 39110,
+    "#affected+idps+ind": 234660
+  },
+  {
+    "#country+name": "Yemen",
+    "#country+code": "YEM",
+    "#adm1+name": "Lahj",
+    "#adm1+code": "YE25",
+    "#affected+hh+idps": 13357,
+    "#affected+idps+ind": 80142
+  },
+  {
+    "#country+name": "Yemen",
+    "#country+code": "YEM",
+    "#adm1+name": "Marib",
+    "#adm1+code": "YE26",
+    "#affected+hh+idps": 139213,
+    "#affected+idps+ind": 835278
+  },
+  {
+    "#country+name": "Yemen",
+    "#country+code": "YEM",
+    "#adm1+name": "Raymah",
+    "#adm1+code": "YE31",
+    "#affected+hh+idps": 9632,
+    "#affected+idps+ind": 57792
+  },
+  {
+    "#country+name": "Yemen",
+    "#country+code": "YEM",
+    "#adm1+name": "Sa'ada",
+    "#adm1+code": "YE22",
+    "#affected+hh+idps": 28922,
+    "#affected+idps+ind": 173532
+  },
+  {
+    "#country+name": "Yemen",
+    "#country+code": "YEM",
+    "#adm1+name": "Sana'a",
+    "#adm1+code": "YE23",
+    "#affected+hh+idps": 18120,
+    "#affected+idps+ind": 108720
+  },
+  {
+    "#country+name": "Yemen",
+    "#country+code": "YEM",
+    "#adm1+name": "Shabwah",
+    "#adm1+code": "YE21",
+    "#affected+hh+idps": 6186,
+    "#affected+idps+ind": 37116
+  },
+  {
+    "#country+name": "Yemen",
+    "#country+code": "YEM",
+    "#adm1+name": "Socotra",
+    "#adm1+code": "YE32",
+    "#affected+hh+idps": 829,
+    "#affected+idps+ind": 4974
+  },
+  {
+    "#country+name": "Yemen",
+    "#country+code": "YEM",
+    "#adm1+name": "Taizz",
+    "#adm1+code": "YE15",
+    "#affected+hh+idps": 77234,
+    "#affected+idps+ind": 463404
+  },
+  {
+    "#country+name": "Iraq",
+    "#country+code": "IRQ",
+    "#adm1+name": "Anbar",
+    "#adm1+code": "IQG01",
+    "#affected+hh+idps": 6027,
+    "#affected+idps+ind": 36162
+  },
+  {
+    "#country+name": "Iraq",
+    "#country+code": "IRQ",
+    "#adm1+name": "Babylon",
+    "#adm1+code": "IQG07",
+    "#affected+hh+idps": 2834,
+    "#affected+idps+ind": 17004
+  },
+  {
+    "#country+name": "Iraq",
+    "#country+code": "IRQ",
+    "#adm1+name": "Baghdad",
+    "#adm1+code": "IQG08",
+    "#affected+hh+idps": 5839,
+    "#affected+idps+ind": 35034
+  },
+  {
+    "#country+name": "Iraq",
+    "#country+code": "IRQ",
+    "#adm1+name": "Basrah",
+    "#adm1+code": "IQG02",
+    "#affected+hh+idps": 1088,
+    "#affected+idps+ind": 6528
+  },
+  {
+    "#country+name": "Iraq",
+    "#country+code": "IRQ",
+    "#adm1+name": "Dahuk",
+    "#adm1+code": "IQG09",
+    "#affected+hh+idps": 53177,
+    "#affected+idps+ind": 319062
+  },
+  {
+    "#country+name": "Iraq",
+    "#country+code": "IRQ",
+    "#adm1+name": "Diyala",
+    "#adm1+code": "IQG10",
+    "#affected+hh+idps": 8948,
+    "#affected+idps+ind": 53688
+  },
+  {
+    "#country+name": "Iraq",
+    "#country+code": "IRQ",
+    "#adm1+name": "Erbil",
+    "#adm1+code": "IQG11",
+    "#affected+hh+idps": 39416,
+    "#affected+idps+ind": 236496
+  },
+  {
+    "#country+name": "Iraq",
+    "#country+code": "IRQ",
+    "#adm1+name": "Kerbala",
+    "#adm1+code": "IQG12",
+    "#affected+hh+idps": 2593,
+    "#affected+idps+ind": 15558
+  },
+  {
+    "#country+name": "Iraq",
+    "#country+code": "IRQ",
+    "#adm1+name": "Kirkuk",
+    "#adm1+code": "IQG13",
+    "#affected+hh+idps": 16671,
+    "#affected+idps+ind": 100026
+  },
+  {
+    "#country+name": "Iraq",
+    "#country+code": "IRQ",
+    "#adm1+name": "Missan",
+    "#adm1+code": "IQG14",
+    "#affected+hh+idps": 371,
+    "#affected+idps+ind": 2226
+  },
+  {
+    "#country+name": "Iraq",
+    "#country+code": "IRQ",
+    "#adm1+name": "Muthanna",
+    "#adm1+code": "IQG03",
+    "#affected+hh+idps": 166,
+    "#affected+idps+ind": 996
+  },
+  {
+    "#country+name": "Iraq",
+    "#country+code": "IRQ",
+    "#adm1+name": "Najaf",
+    "#adm1+code": "IQG04",
+    "#affected+hh+idps": 2091,
+    "#affected+idps+ind": 12546
+  },
+  {
+    "#country+name": "Iraq",
+    "#country+code": "IRQ",
+    "#adm1+name": "Ninewa",
+    "#adm1+code": "IQG15",
+    "#affected+hh+idps": 54013,
+    "#affected+idps+ind": 324078
+  },
+  {
+    "#country+name": "Iraq",
+    "#country+code": "IRQ",
+    "#adm1+name": "Qadissiya",
+    "#adm1+code": "IQG05",
+    "#affected+hh+idps": 648,
+    "#affected+idps+ind": 3888
+  },
+  {
+    "#country+name": "Iraq",
+    "#country+code": "IRQ",
+    "#adm1+name": "Salah al-Din",
+    "#adm1+code": "IQG16",
+    "#affected+hh+idps": 11450,
+    "#affected+idps+ind": 68700
+  },
+  {
+    "#country+name": "Iraq",
+    "#country+code": "IRQ",
+    "#adm1+name": "Sulaymaniyah",
+    "#adm1+code": "IQG06",
+    "#affected+hh+idps": 23310,
+    "#affected+idps+ind": 139860
+  },
+  {
+    "#country+name": "Iraq",
+    "#country+code": "IRQ",
+    "#adm1+name": "Thi-Qar",
+    "#adm1+code": "IQG17",
+    "#affected+hh+idps": 566,
+    "#affected+idps+ind": 3396
+  },
+  {
+    "#country+name": "Iraq",
+    "#country+code": "IRQ",
+    "#adm1+name": "Wassit",
+    "#adm1+code": "IQG18",
+    "#affected+hh+idps": 1014,
+    "#affected+idps+ind": 6084
+  },
+  {
+    "#country+name": "Afghanistan",
+    "#country+code": "AFG",
+    "#adm1+name": "Badakhshan",
+    "#adm1+code": "AF17",
+    "#affected+hh+idps": 15717,
+    "#affected+idps+ind": 95420
+  },
+  {
+    "#country+name": "Afghanistan",
+    "#country+code": "AFG",
+    "#adm1+name": "Badghis",
+    "#adm1+code": "AF31",
+    "#affected+hh+idps": 30999,
+    "#affected+idps+ind": 186656
+  },
+  {
+    "#country+name": "Afghanistan",
+    "#country+code": "AFG",
+    "#adm1+name": "Baghlan",
+    "#adm1+code": "AF09",
+    "#affected+hh+idps": 26117,
+    "#affected+idps+ind": 158005
+  },
+  {
+    "#country+name": "Afghanistan",
+    "#country+code": "AFG",
+    "#adm1+name": "Balkh",
+    "#adm1+code": "AF21",
+    "#affected+hh+idps": 25642,
+    "#affected+idps+ind": 154985
+  },
+  {
+    "#country+name": "Afghanistan",
+    "#country+code": "AFG",
+    "#adm1+name": "Bamyan",
+    "#adm1+code": "AF10",
+    "#affected+hh+idps": 14134,
+    "#affected+idps+ind": 85239
+  },
+  {
+    "#country+name": "Afghanistan",
+    "#country+code": "AFG",
+    "#adm1+name": "Daykundi",
+    "#adm1+code": "AF24",
+    "#affected+hh+idps": 8991,
+    "#affected+idps+ind": 54375
+  },
+  {
+    "#country+name": "Afghanistan",
+    "#country+code": "AFG",
+    "#adm1+name": "Farah",
+    "#adm1+code": "AF33",
+    "#affected+hh+idps": 40960,
+    "#affected+idps+ind": 246667
+  },
+  {
+    "#country+name": "Afghanistan",
+    "#country+code": "AFG",
+    "#adm1+name": "Faryab",
+    "#adm1+code": "AF29",
+    "#affected+hh+idps": 38895,
+    "#affected+idps+ind": 233921
+  },
+  {
+    "#country+name": "Afghanistan",
+    "#country+code": "AFG",
+    "#adm1+name": "Ghazni",
+    "#adm1+code": "AF11",
+    "#affected+hh+idps": 17079,
+    "#affected+idps+ind": 103319
+  },
+  {
+    "#country+name": "Afghanistan",
+    "#country+code": "AFG",
+    "#adm1+name": "Ghor",
+    "#adm1+code": "AF23",
+    "#affected+hh+idps": 11274,
+    "#affected+idps+ind": 68188
+  },
+  {
+    "#country+name": "Afghanistan",
+    "#country+code": "AFG",
+    "#adm1+name": "Helmand",
+    "#adm1+code": "AF30",
+    "#affected+hh+idps": 59224,
+    "#affected+idps+ind": 356025
+  },
+  {
+    "#country+name": "Afghanistan",
+    "#country+code": "AFG",
+    "#adm1+name": "Herat",
+    "#adm1+code": "AF32",
+    "#affected+hh+idps": 37739,
+    "#affected+idps+ind": 227664
+  },
+  {
+    "#country+name": "Afghanistan",
+    "#country+code": "AFG",
+    "#adm1+name": "Jawzjan",
+    "#adm1+code": "AF28",
+    "#affected+hh+idps": 40038,
+    "#affected+idps+ind": 241072
+  },
+  {
+    "#country+name": "Afghanistan",
+    "#country+code": "AFG",
+    "#adm1+name": "Kabul",
+    "#adm1+code": "AF01",
+    "#affected+hh+idps": 12269,
+    "#affected+idps+ind": 74833
+  },
+  {
+    "#country+name": "Afghanistan",
+    "#country+code": "AFG",
+    "#adm1+name": "Kandahar",
+    "#adm1+code": "AF27",
+    "#affected+hh+idps": 48549,
+    "#affected+idps+ind": 292106
+  },
+  {
+    "#country+name": "Afghanistan",
+    "#country+code": "AFG",
+    "#adm1+name": "Kapisa",
+    "#adm1+code": "AF02",
+    "#affected+hh+idps": 5505,
+    "#affected+idps+ind": 33364
+  },
+  {
+    "#country+name": "Afghanistan",
+    "#country+code": "AFG",
+    "#adm1+name": "Khost",
+    "#adm1+code": "AF14",
+    "#affected+hh+idps": 7254,
+    "#affected+idps+ind": 44769
+  },
+  {
+    "#country+name": "Afghanistan",
+    "#country+code": "AFG",
+    "#adm1+name": "Kunar",
+    "#adm1+code": "AF15",
+    "#affected+hh+idps": 22522,
+    "#affected+idps+ind": 135865
+  },
+  {
+    "#country+name": "Afghanistan",
+    "#country+code": "AFG",
+    "#adm1+name": "Kunduz",
+    "#adm1+code": "AF19",
+    "#affected+hh+idps": 26140,
+    "#affected+idps+ind": 157550
+  },
+  {
+    "#country+name": "Afghanistan",
+    "#country+code": "AFG",
+    "#adm1+name": "Laghman",
+    "#adm1+code": "AF07",
+    "#affected+hh+idps": 17131,
+    "#affected+idps+ind": 103210
+  },
+  {
+    "#country+name": "Afghanistan",
+    "#country+code": "AFG",
+    "#adm1+name": "Logar",
+    "#adm1+code": "AF05",
+    "#affected+hh+idps": 18595,
+    "#affected+idps+ind": 112285
+  },
+  {
+    "#country+name": "Afghanistan",
+    "#country+code": "AFG",
+    "#adm1+name": "Nangarhar",
+    "#adm1+code": "AF06",
+    "#affected+hh+idps": 57664,
+    "#affected+idps+ind": 347484
+  },
+  {
+    "#country+name": "Afghanistan",
+    "#country+code": "AFG",
+    "#adm1+name": "Nimroz",
+    "#adm1+code": "AF34",
+    "#affected+hh+idps": 2392,
+    "#affected+idps+ind": 14857
+  },
+  {
+    "#country+name": "Afghanistan",
+    "#country+code": "AFG",
+    "#adm1+name": "Nuristan",
+    "#adm1+code": "AF16",
+    "#affected+hh+idps": 1820,
+    "#affected+idps+ind": 11022
+  },
+  {
+    "#country+name": "Afghanistan",
+    "#country+code": "AFG",
+    "#adm1+name": "Paktika",
+    "#adm1+code": "AF12",
+    "#affected+hh+idps": 5270,
+    "#affected+idps+ind": 32125
+  },
+  {
+    "#country+name": "Afghanistan",
+    "#country+code": "AFG",
+    "#adm1+name": "Paktya",
+    "#adm1+code": "AF13",
+    "#affected+hh+idps": 7002,
+    "#affected+idps+ind": 42768
+  },
+  {
+    "#country+name": "Afghanistan",
+    "#country+code": "AFG",
+    "#adm1+name": "Panjsher",
+    "#adm1+code": "AF08",
+    "#affected+hh+idps": 642,
+    "#affected+idps+ind": 3915
+  },
+  {
+    "#country+name": "Afghanistan",
+    "#country+code": "AFG",
+    "#adm1+name": "Parwan",
+    "#adm1+code": "AF03",
+    "#affected+hh+idps": 15316,
+    "#affected+idps+ind": 92696
+  },
+  {
+    "#country+name": "Afghanistan",
+    "#country+code": "AFG",
+    "#adm1+name": "Samangan",
+    "#adm1+code": "AF20",
+    "#affected+hh+idps": 12234,
+    "#affected+idps+ind": 73824
+  },
+  {
+    "#country+name": "Afghanistan",
+    "#country+code": "AFG",
+    "#adm1+name": "Sar-e-Pul",
+    "#adm1+code": "AF22",
+    "#affected+hh+idps": 11920,
+    "#affected+idps+ind": 72028
+  },
+  {
+    "#country+name": "Afghanistan",
+    "#country+code": "AFG",
+    "#adm1+name": "Takhar",
+    "#adm1+code": "AF18",
+    "#affected+hh+idps": 16773,
+    "#affected+idps+ind": 101741
+  },
+  {
+    "#country+name": "Afghanistan",
+    "#country+code": "AFG",
+    "#adm1+name": "Uruzgan",
+    "#adm1+code": "AF25",
+    "#affected+hh+idps": 27824,
+    "#affected+idps+ind": 167085
+  },
+  {
+    "#country+name": "Afghanistan",
+    "#country+code": "AFG",
+    "#adm1+name": "Wardak",
+    "#adm1+code": "AF04",
+    "#affected+hh+idps": 44859,
+    "#affected+idps+ind": 269613
+  },
+  {
+    "#country+name": "Afghanistan",
+    "#country+code": "AFG",
+    "#adm1+name": "Zabul",
+    "#adm1+code": "AF26",
+    "#affected+hh+idps": 27599,
+    "#affected+idps+ind": 166548
+  }
+]
